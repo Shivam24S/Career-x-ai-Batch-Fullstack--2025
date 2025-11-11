@@ -1,0 +1,11 @@
+.text {
+  font-size: 60px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 500;
+  color: chocolate;
+  font-style: italic;
+  text-decoration: none;
+  text-align: center;
+  text-transform: capitalize;
+  list-style: none;
+}
