@@ -1,0 +1,32 @@
+@font-face {
+  font-family: openSans;
+  src: url(./font/OpenSans-Regular-webfont.woff);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* inbuilt */
+  /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
+
+  /* external */
+  /* font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal; */
+
+  /* internal using download external file */
+
+  font-family: openSans;
+}
+
+.fa-solid {
+  font-size: 50px;
+}
+
+.ri-smartphone-line {
+  font-size: 50px;
+}
