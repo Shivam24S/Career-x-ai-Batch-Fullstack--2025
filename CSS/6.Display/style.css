@@ -1,0 +1,35 @@
+.car img {
+  display: block;
+  height: 500px;
+  width: 700px;
+}
+
+.bike {
+  display: none;
+}
+
+.box {
+  border: 2px solid black;
+  height: 250px;
+  width: 250px;
+}
+
+.otherClass {
+  background-color: cadetblue;
+}
+
+.parent {
+  border: 2px solid black;
+  height: 250px;
+  width: 250px;
+}
+
+.parent h1 {
+  color: brown;
+}
+
+.child {
+  border: 2px dotted gray;
+  height: 150px;
+  width: 150px;
+}

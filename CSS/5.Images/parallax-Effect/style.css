@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  height: 600px;
+  border: 2px solid black;
+  text-align: center;
+}
+
+.background {
+  background-image: url("../img/pexels-pixabay-355465.jpg");
+  background-attachment: fixed;
+  height: 800px;
+}

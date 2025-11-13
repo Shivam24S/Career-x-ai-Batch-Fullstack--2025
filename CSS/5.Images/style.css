@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.background {
+  /* background-image: url("./img/pexels-pixabay-355465.jpg"); */
+  height: 500px;
+  width: 500px;
+  background-image: url("https://images.pexels.com/photos/36744/agriculture-arable-clouds-countryside.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+}
