@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* .div {
+  color: brown;
+} */
+
+/* div p {
+  color: blueviolet;
+} */
+
+/* div,
+p {
+  color: cadetblue;
+} */
+
+/* pseudo elements */
+
+p::first-letter {
+  font-size: 50px;
+  color: chartreuse;
+}
+
+.list::first-line {
+  color: blue;
+  font-size: 60px;
+}
+
+/* pseudo classes */
+
+.list li:first-child {
+  font-family: cursive;
+}
+
+.list li:last-child {
+  font-style: italic;
+}
+
+.list li:nth-child(3) {
+  color: burlywood;
+}

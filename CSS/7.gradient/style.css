@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* margin: auto; */
+  margin-top: 50px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.linear {
+  /* background-image: linear-gradient(135deg, pink, blue); */
+
+  background-image: linear-gradient(to top right, pink, blue);
+  height: 500px;
+  width: 500px;
+  color: white;
+  text-align: center;
+}
+
+.radial {
+  background-image: radial-gradient(yellow, rgb(43, 255, 43));
+  height: 500px;
+  width: 500px;
+  color: white;
+  text-align: center;
+}
+
+.conic {
+  background-image: conic-gradient(rgb(0, 225, 255), rgb(200, 255, 0));
+  height: 500px;
+  width: 500px;
+  color: white;
+  text-align: center;
+}
+
+.rainbow {
+  background-image: linear-gradient(
+    90deg,
+    red,
+    orange,
+    yellow,
+    green,
+    cyan,
+    blue,
+    violet
+  );
+  height: 100px;
+  width: auto;
+  margin: 200px;
+  text-align: center;
+  color: white;
+}
