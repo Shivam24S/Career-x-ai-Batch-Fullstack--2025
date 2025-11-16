@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 500vh;
+}
+
+.container {
+  border: 2px solid black;
+  margin: auto;
+  height: 600px;
+  width: 800px;
+  margin-top: 200px;
+  /* position: relative; */
+}
+
+.box {
+  border: 2px solid black;
+  height: 100px;
+  width: 100px;
+  text-align: center;
+}
+
+.green {
+  background-color: green;
+  position: static;
+  top: 50px;
+  right: 50px;
+}
+
+.red {
+  background-color: red;
+  position: relative;
+  top: 50px;
+  right: 50px;
+  left: 50px;
+}
+
+.yellow {
+  background-color: yellow;
+  position: absolute;
+  top: 50px;
+}
+
+.blue {
+  background-color: blue;
+  position: fixed;
+  top: 50px;
+  /* z-index: 1; */
+}
+
+.orange {
+  background-color: orange;
+  position: sticky;
+  top: 50px;
+}
