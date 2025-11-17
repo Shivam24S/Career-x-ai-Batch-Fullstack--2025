@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.heading::before {
+  content: "⭐";
+  font-size: 50px;
+}
+
+.btn {
+  height: 30px;
+  width: 100px;
+  position: relative;
+  background-color: blueviolet;
+  border-radius: 5px;
+}
+
+.btn::after {
+  content: "NEW";
+  position: absolute;
+  top: -5px;
+  height: 20px;
+  width: 50px;
+  background-color: red;
+  border-radius: 5px;
+}

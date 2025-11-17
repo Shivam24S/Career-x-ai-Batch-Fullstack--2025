@@ -65,3 +65,8 @@
   background-color: purple;
   top: 50px;
 }
+
+.purple:hover {
+  background-color: cadetblue;
+  transform: scale(1.5);
+}
