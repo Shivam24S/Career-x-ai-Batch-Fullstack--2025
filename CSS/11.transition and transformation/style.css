@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.box {
+  height: 250px;
+  width: 250px;
+  margin: auto;
+  margin-top: 50px;
+  background-color: aquamarine;
+  text-align: center;
+  transition-duration: 1s;
+  transition-delay: 1s;
+  /* transition-property: border-radius, background-color; */
+  /* transition-property: all; */
+  transition-timing-function: linear;
+  /* transition-timing-function: cubic-bezier(0, 1.39, 1, -0.65); */
+  /* transition: 0.5s background-color 1s ease; */
+}
+
+.box:hover {
+  background-color: blueviolet;
+  border-radius: 50%;
+  /* transition-duration: 1s; */
+}
