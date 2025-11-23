@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  height: 900px;
+  width: 800px;
+  border: 2px solid black;
+  margin: auto;
+  display: grid;
+  grid-template-areas:
+    "hdr hdr hdr hdr"
+    "sbr main main main"
+    "sbr main main main"
+    "ftr ftr ftr ftr";
+}
+
+.box {
+  /* height: 100px;
+  width: 100px; */
+  border: 1px solid black;
+}
+
+#box-1 {
+  background-color: blueviolet;
+  grid-area: hdr;
+}
+
+#box-2 {
+  background-color: aquamarine;
+  grid-area: sbr;
+}
+
+#box-3 {
+  background-color: yellowgreen;
+  grid-area: main;
+}
+#box-4 {
+  background-color: thistle;
+  grid-area: ftr;
+}
