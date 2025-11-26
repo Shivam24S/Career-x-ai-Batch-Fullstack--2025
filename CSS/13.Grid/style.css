@@ -8,7 +8,6 @@
   height: 900px;
   width: 800px;
   border: 2px solid black;
-  margin: auto;
   display: grid;
   /* grid-template-columns: 100px 100px 100px 200px; */
   /* grid-template-columns: 1fr 1fr 1fr; */
@@ -20,6 +19,7 @@
   /* column-gap: 10px; */
   /* justify-content: center;
   align-items: stretch; */
+  margin: auto;
 }
 
 .box {
@@ -36,36 +36,30 @@
 }
 
 #box-2 {
-  background-color: aquamarine;
-  grid-row: 2/6;
+  background-color: bisque;
+  grid-row: 2/5;
 }
 
 #box-3 {
-  background-color: rgb(221, 184, 255);
+  background-color: aquamarine;
   grid-column: 2/-1;
 }
 
 #box-4 {
-  background-color: rgb(26, 247, 255);
+  background-color: brown;
 }
 
 #box-5 {
-  background-color: rgb(255, 255, 80);
+  background-color: cadetblue;
 }
 
 #box-6 {
   background-color: chartreuse;
+  grid-column: 2/4;
+  /* align-self: center; */
 }
+
 #box-7 {
-  background-color: chocolate;
-}
-
-#box-8 {
-  background-color: blanchedalmond;
-  grid-column: 2/-1;
-}
-
-#box-9 {
-  background-color: brown;
+  background-color: gainsboro;
   grid-column: 1/-1;
 }
