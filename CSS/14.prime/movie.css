@@ -90,41 +90,107 @@ nav {
 }
 
 .container {
-  display: flex;
-  justify-content: center;
-  /* align-items: center; */
+  background-image: url(./asset/movie-k.webp);
+  height: 80vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   width: 100%;
+  position: relative;
 }
 
-.container-left {
+.content {
+  position: absolute;
+  margin: 5rem;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  flex: 1;
-  padding: 5rem;
-  margin-top: 10rem;
+  margin-top: 15rem;
+  transition: all 1s ease-in;
 }
 
-.container-left img {
-  width: 30vw;
+.content img {
+  width: 25vw;
 }
 
-.ranking {
+.rank {
   color: #37f1a3;
-}
-
-.container-right img {
-  height: 700px;
-  width: 100%;
-  background-size: cover;
-  background-position: top right;
 }
 
 .description {
   display: none;
-  position: absolute;
+  position: relative;
+  font-size: 20px;
 }
 
-.container-left:hover .description {
+.content:hover .description {
+  display: block;
+}
+
+.btns {
+  display: flex;
+  gap: 20px;
+}
+
+.join-btn {
+  height: 60px;
+  width: 150px;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.circle-btn {
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  border: none;
+  font-size: 20px;
+}
+
+.fa-bag-shopping {
+  color: gold;
+}
+
+#movie {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-left: 5rem;
+  /* margin-top: 20px; */
+}
+
+.movie-type {
+  display: flex;
+  gap: 30px;
+}
+
+.movie-card {
+  display: flex;
+  /* flex-direction: column; */
+  gap: 100px;
+}
+
+.card {
+  height: 400px;
+  width: 350px;
+  /* border: 2px solid white; */
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  z-index: 100;
+}
+
+.movie-image {
+  height: 200px;
+  width: 345px;
+  border-radius: 10px;
+}
+
+.hidden-detail {
+  display: none;
+  position: relative;
+}
+
+.card:hover .hidden-detail {
   display: block;
 }
