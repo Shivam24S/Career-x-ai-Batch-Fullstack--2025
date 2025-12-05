@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  color: white;
+}
+
+@media (width<=400px) {
+  body {
+    background-color: red;
+  }
+}
+
+@media (orientation: portrait) {
+  body {
+    background-color: aquamarine;
+  }
+}
+
+@media (orientation: landscape) {
+  body {
+    background-color: blueviolet;
+  }
+}
+
+/* ending point */
+@media (max-width: 600px) {
+  body {
+    background-color: chartreuse;
+  }
+}
+
+/* starting point */
+@media (min-width: 300px) {
+  body {
+    background-color: brown;
+  }
+}
+
+/* @media (min-width: 200px) and (max-width: 800px) {
+  body {
+    background-color: chocolate;
+  }
+} */
+
+@media print and (max-width: 500px) {
+  body {
+    background-color: cornflowerblue;
+  }
+
+  h1 {
+    font-size: 100px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    background-color: cornflowerblue;
+  }
+
+  h1 {
+    font-size: 100px;
+  }
+}
+
+@media (200px<width<800px) {
+  body {
+    background-color: crimson;
+  }
+}
