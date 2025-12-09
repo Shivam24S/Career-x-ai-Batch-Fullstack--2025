@@ -293,10 +293,10 @@ body {
     font-size: 2rem;
   }
 
-  #about h2 {
+  .about h2 {
     font-size: 4rem;
   }
-  #about p {
+  .about p {
     font-size: 2rem;
   }
 
@@ -310,7 +310,7 @@ body {
     align-items: center;
     text-align: center;
   }
-  .card {
+  /* .card {
     width: 100%;
   }
   .card h3 {
@@ -319,7 +319,7 @@ body {
 
   .card p {
     font-size: 2rem;
-  }
+  } */
 
   .gallery h2 {
     font-size: 4rem;
@@ -435,5 +435,152 @@ body {
 
   .btn {
     height: 6vh;
+  }
+}
+
+@media (min-width: 992px) {
+  .btn {
+    height: 8vh !important;
+  }
+
+  .about h2 {
+    font-size: 2rem;
+  }
+  .about p {
+    font-size: 1rem;
+  }
+
+  .highlights h2 {
+    font-size: 2rem;
+  }
+  .card-row {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .card {
+    width: 33%;
+  }
+
+  .gallery h2 {
+    font-size: 2rem;
+  }
+  .gallery p {
+    font-size: 1rem;
+  }
+
+  .gallery-grid {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .gallery-item {
+    height: 20vh !important;
+    width: 30vw;
+  }
+
+  .pricing h2 {
+    font-size: 2rem;
+  }
+
+  .pricing-row {
+    flex-direction: row !important;
+  }
+
+  .price-card {
+    height: 40vh;
+    width: 25vw;
+  }
+
+  .price-card h3 {
+    font-size: 1rem;
+  }
+
+  .price-card p {
+    font-size: 2rem;
+  }
+
+  .price-card li {
+    font-size: 3vh !important;
+  }
+
+  .btn {
+    height: 6vh !important;
+    width: 20vw;
+    font-size: 1rem;
+  }
+
+  .testimonials h2 {
+    font-size: 2rem;
+  }
+
+  .test-card {
+    height: 25vh;
+    width: 30vw;
+  }
+
+  .test-card p {
+    font-size: 1rem;
+  }
+
+  .test-card h4 {
+    font-size: 1rem;
+  }
+
+  .test-row {
+    flex-direction: row !important;
+  }
+
+  .contact h2 {
+    font-size: 2rem;
+  }
+
+  .contact p {
+    font-size: 1rem;
+  }
+
+  .contact-wrapper {
+    display: flex !important;
+    flex-direction: row !important;
+  }
+
+  .contact-form {
+    width: 50%;
+  }
+
+  .contact-form input {
+    width: 70%;
+  }
+  .contact-form textarea {
+    width: 70%;
+  }
+
+  .contact-info {
+    width: 40% !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .pricing-row {
+    flex-wrap: nowrap !important;
+  }
+}
+
+@media (min-width: 1400px) {
+  .gallery-grid {
+    display: flex;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .price-card {
+    height: 40vh;
+    width: 15vw;
+  }
+
+  .price-card button {
+    height: 5vh !important;
+    width: 10vw !important;
   }
 }
