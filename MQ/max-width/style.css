@@ -604,10 +604,19 @@ textarea:focus {
     align-items: center;
   
   }
-
-
   .hero-card{
     gap: 1rem;
   }
 
+  .about-layout{
+    grid-template-columns: 1fr;
+    
+  }
+
+}
+
+@media (max-width:400px){
+  header{
+    display: none;
+  }
 }
