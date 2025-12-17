@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    border: 2px solid black;
+    margin-top: 1rem;
+
+}
+
+
+.row,.col,.col-md-4,.col-md-8{
+    border: 1px solid black;
+}
+
+
+ul{
+    gap: 50px;
+    
+}
+
+li{
+    list-style: none;
+    margin-top: 20px;
+}

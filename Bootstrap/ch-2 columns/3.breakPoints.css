@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    border: 3px dashed black;
+}
+
+.row{
+    border: 2px dotted blue;
+}
+
+
+.col-md-6,.col-md-3,.col{
+    border: 1px solid red;
+    height: 200px;
+}
