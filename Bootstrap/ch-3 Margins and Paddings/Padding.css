@@ -1,0 +1,28 @@
+
+
+.container{
+    border: 2px solid black;
+}
+
+.col-md-2,.col-md-3{
+    border: 1px solid black;
+}
+
+
+/* .column-1{
+    background-color: brown;
+    
+    
+}
+
+.column-2{
+    background-color: aquamarine;
+}
+
+.column-3{
+    background-color: yellowgreen;
+}
+
+.column-4{
+    background-color: steelblue ;
+} */
