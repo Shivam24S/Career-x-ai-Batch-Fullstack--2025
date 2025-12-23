@@ -1,0 +1,30 @@
+.container {
+  height: 1800px;
+  border: 2px solid black;
+}
+
+.row {
+    height: 500px;
+  border: 1px solid black;
+}
+
+.col-md-2 {
+  height: 200px;
+  border: 2px solid black;
+}
+
+#col-1 {
+  background-color: cornflowerblue;
+}
+
+#col-2 {
+  background-color: tomato;
+}
+
+#col-3 {
+  background-color: peru;
+}
+
+#col-4 {
+  background-color: olivedrab;
+}
