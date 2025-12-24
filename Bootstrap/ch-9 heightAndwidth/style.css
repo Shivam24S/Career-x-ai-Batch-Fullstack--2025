@@ -1,0 +1,36 @@
+.container {
+  border: 2px solid rgb(255, 1, 1);
+  
+}
+
+.col-md-3 {
+  border: 2px solid black;
+  width: 200px;
+}
+
+.row{
+    border: 2px solid black;
+    height: 500px;
+
+}
+
+
+#col-1{
+    background-color: yellowgreen;
+
+}
+
+#col-2{
+    background-color:thistle;
+
+}
+
+#col-3{
+    background-color:skyblue;
+
+}
+
+#col-4{
+    background-color:chocolate;
+
+}

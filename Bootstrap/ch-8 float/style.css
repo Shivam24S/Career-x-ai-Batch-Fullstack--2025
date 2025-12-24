@@ -1,0 +1,23 @@
+.container {
+  border: 2px solid black;
+  height: 1800px;
+}
+
+.row{
+    height: 500px;
+    border: 2px solid black;
+    width: 500px;
+
+}
+
+.col-md-4 {
+  border: 2px solid black;
+  background-color: cadetblue;
+  height: 200px;
+  width: 200px;
+}
+
+#col-1 {
+  background-color: cadetblue;
+}
+
