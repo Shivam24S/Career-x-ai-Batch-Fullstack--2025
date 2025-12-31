@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Form</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <h1 class="text-center">Bootstrap Form</h1>
+        <div class="col">
+          <form class="form shadow p-5">
+            <div class="m-2">
+              <label for="name" class="form-label">Name</label>
+              <input
+                type="text"
+                name="name"
+                placeholder="enter your name"
+                class="form-control"
+              />
+            </div>
+
+            <div class="m-2">
+              <label for="name" class="form-label">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                value="user@gmail.com"
+                readonly
+              />
+            </div>
+
+            <div class="m-2">
+              <label for="number" class="form-label">Number</label>
+              <input type="number" class="form-control" />
+              <small class="form-text text-muted">+91 only</small>
+            </div>
+
+            <div class="m-2">
+              <input
+                type="text"
+                placeholder="this is big input"
+                class="form-control form-control-lg"
+              />
+            </div>
+            <div class="m-2">
+              <input
+                type="text"
+                placeholder="this is small input"
+                class="form-control form-control-sm"
+              />
+            </div>
+
+            <div class="m-2">
+              <label for="file">File</label>
+              <input type="file" class="form-control" />
+            </div>
+
+            <div class="m-2">
+              <input type="checkbox" class="form-control-check" />
+              <label for="check" class="form-label-check"
+                >i agree terms and condition</label
+              >
+            </div>
+
+            <div class="m-2">
+              <input type="radio" class="form-control-input" name="answer" />
+              <label for="yes" id="answer" class="form-control-label"
+                >Yes</label
+              >
+              <input type="radio" class="form-control-input" name="answer" />
+              <label for="no" id="answer" class="form-control-label">no</label>
+            </div>
+
+            <div class="m-2">
+              <input type="range" class="form-range" />
+            </div>
+
+            <div class="m-2">
+              <textarea
+                name=""
+                id=""
+                class="form-control"
+                rows="4"
+                placeholder="enter your message"
+              ></textarea>
+            </div>
+
+            <div class="m-2">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="search"
+                list="descriptionList"
+              />
+              <datalist id="descriptionList">
+                <option value="mumbai">Mumbai</option>
+                <option value="London">London</option>
+                <option value="California">California</option>
+                <option value="Dubai">Dubai</option>
+              </datalist>
+            </div>
+
+            <div class="m-2">
+              <div class="form-floating mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="floatingInput"
+                  placeholder="name@example.com"
+                />
+                <label for="floatingInput">Email address</label>
+              </div>
+              <div class="form-floating">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="floatingPassword"
+                  placeholder="Password"
+                />
+                <label for="floatingPassword">Password</label>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
