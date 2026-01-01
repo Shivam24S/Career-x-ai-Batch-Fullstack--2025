@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+body{
+    background-color: black;
+}
+
+.container{
+    border: 2px dashed gainsboro;
+}
+
+.col-md-4{
+    border: 2px dashed gainsboro;
+     margin-top: 10px;
+
+}
+
+
+.col-md-4 img{
+    margin-top: 20px;
+}
