@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #212529;
+    color: white;
+}
+
+.nav-link {
+    color: white;
+}
+
+.navbar-brand{
+    color: white;
+}
+
+.nav-link:hover{
+    color: aquamarine;
+}
+
