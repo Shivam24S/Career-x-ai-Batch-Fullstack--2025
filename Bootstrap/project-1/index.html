@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bootstrap demo</title>
+    <title>LuxWheels</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -17,7 +17,7 @@
       <header>
         <nav class="navbar navbar-expand-lg bg-dark">
           <div class="container">
-            <a class="navbar-brand" href="#">Cars</a>
+            <a class="navbar-brand" href="#">LuxWheels</a>
             <button
               class="navbar-toggler"
               type="button"
@@ -32,9 +32,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link " aria-current="page" href="#"
-                    >Home</a
-                  >
+                  <a class="nav-link" aria-current="page" href="#">Home</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">About</a>
@@ -75,7 +73,11 @@
 
     <main>
       <section id="home">
-        <div id="carouselExampleCaptions" class="carousel slide">
+        <div
+          id="carouselExampleCaptions"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
           <div class="carousel-indicators">
             <button
               type="button"
@@ -99,30 +101,41 @@
             ></button>
           </div>
           <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="./asset/rolls.jpg"  alt="g-wagon"  class="img-fluid" />
+            <div class="carousel-item active" data-bs-interval="5000">
+              <img src="./asset/dodge.jpg" alt="dodge" class="img-fluid" />
               <div class="carousel-caption d-none d-md-block">
-                <h5>First slide label</h5>
+                <h5>Unleash Pure Muscle</h5>
                 <p>
-                  Some representative placeholder content for the first slide.
+                  Feel the raw power of the Dodge Challenger — an American
+                  muscle icon built for adrenaline, dominance, and bold
+                  performance on every road.
                 </p>
               </div>
             </div>
-            <div class="carousel-item">
-              <img src="./asset/dodge.jpg"  alt="dodge" class="img-fluid" />
+            <div class="carousel-item" data-bs-interval="5000">
+              <img
+                class="rolls"
+                src="./asset/rolls.jpg"
+                alt="rolls"
+                class="img-fluid"
+              />
               <div class="carousel-caption d-none d-md-block">
-                <h5>Second slide label</h5>
+                <h5>The Ultimate Symbol of Luxury</h5>
                 <p>
-                  Some representative placeholder content for the second slide.
+                  Experience unmatched elegance and prestige with Rolls-Royce.
+                  Crafted for those who demand absolute comfort, refinement, and
+                  class.
                 </p>
               </div>
             </div>
-            <div class="carousel-item">
-              <img src="./asset/m5.jpg"  alt="m5" class="img-fluid" />
+            <div class="carousel-item" data-bs-interval="5000">
+              <img src="./asset/m5.jpg" alt="m5" class="img-fluid" />
               <div class="carousel-caption d-none d-md-block">
-                <h5>Third slide label</h5>
+                <h5>Performance Meets Precision</h5>
                 <p>
-                  Some representative placeholder content for the third slide.
+                  The BMW M5 delivers supercar performance with executive luxury
+                  — perfect for those who want speed, control, and
+                  sophistication in one drive.
                 </p>
               </div>
             </div>
@@ -145,6 +158,55 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
           </button>
+        </div>
+      </section>
+      <section id="about">
+        <h1 class="text-center m-2">About</h1>
+        <div class="container">
+          <div class="row m-5">
+            <div class="col-12 col-md-6">
+              <img
+                src="./asset/neon-car-paradise-stockcake.jpg"
+                class="img-thumbnail rounded-5 about-img"
+                alt="showroom"
+              />
+            </div>
+            <div class="col-12 col-md-6 about-text mt-4   ">
+              <p>
+                LuxWheels is a premium luxury car rental service designed for
+                individuals who value elegance, performance, and exclusivity. We
+                specialize in offering a carefully curated fleet of world-class
+                vehicles, ranging from powerful muscle cars to ultra-luxury and
+                high-performance sedans.
+              </p>
+              <p>
+                Founded with a passion for automobiles and exceptional service,
+                LuxWheels was created to redefine the way luxury cars are
+                rented. Every vehicle in our collection is meticulously
+                maintained to meet the highest standards of safety, comfort, and
+                style.
+              </p>
+              <p>
+                At LuxWheels, we believe that true luxury lies in the details.
+                From seamless booking to personalized customer support, our goal
+                is to deliver an effortless and memorable experience. Whether
+                you are attending a corporate event, celebrating a special
+                occasion, or simply indulging in a premium driving experience,
+                we ensure every journey feels extraordinary.
+              </p>
+              <p>
+                Our commitment to transparency, reliability, and customer
+                satisfaction sets us apart. With flexible rental plans,
+                competitive pricing, and 24/7 support, LuxWheels makes luxury
+                accessible without compromise.
+              </p>
+
+              <h5>
+                LuxWheels — where performance meets prestige, and every drive
+                becomes an experience.
+              </h5>
+            </div>
+          </div>
         </div>
       </section>
     </main>

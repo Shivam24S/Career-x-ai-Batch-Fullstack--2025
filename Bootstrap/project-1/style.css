@@ -21,3 +21,12 @@ body{
     color: aquamarine;
 }
 
+.carousel-item img{
+    object-fit: cover;
+    max-height: 80vh;
+    width: 100%;
+}
+
+.about-text {
+    line-height: 2;
+}
