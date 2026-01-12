@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: all 0.5s ease !important;
 }
 
 body {
@@ -18,7 +19,7 @@ body {
 }
 
 .nav-link:hover {
-  color: aquamarine;
+  color:rgba(47, 151, 255, 0.25);
 }
 
 .carousel-item img {
@@ -31,25 +32,54 @@ body {
   line-height: 2;
 }
 
+.about-img:hover {
+  scale: 1.1;
+  box-shadow: rgba(47, 151, 255, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
 .service-card img {
   min-height: 35vh;
+  border-radius: 20px;
 }
 
 .service-card {
   min-height: 300px;
   background-color: #212529;
   color: white;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+  border-radius: 20px;
+}
+
+.service-card:hover {
+  scale: 1.1;
+  box-shadow: rgba(47, 151, 255, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
-.accordion-item,.accordion-button  {
+.accordion-item,
+.accordion-button {
   background-color: #212529 !important;
   color: white;
 }
 
+.accordion-item,
+.accordion-button:hover {
+  color: white;
+}
 
-.accordion-item,.accordion-button:hover{
-    color: white;
+.form {
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+.form:hover {
+  box-shadow: rgba(47, 151, 255, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.links {
+  font-size: 30px;
 }

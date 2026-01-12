@@ -10,6 +10,13 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -312,9 +319,9 @@
       </section>
 
       <section id="faq">
-        <h1 class="text-center" >Faq</h1>
+        <h1 class="text-center">Faq</h1>
 
-        <div class="container mt-5 ">
+        <div class="container mt-5">
           <div class="row">
             <div class="col-12">
               <div class="accordion" id="accordionExample">
@@ -328,7 +335,7 @@
                       aria-expanded="true"
                       aria-controls="collapseOne"
                     >
-                     What documents are required to rent a car from LuxWheels?
+                      What documents are required to rent a car from LuxWheels?
                     </button>
                   </h2>
                   <div
@@ -337,7 +344,12 @@
                     data-bs-parent="#accordionExample"
                   >
                     <div class="accordion-body">
-                      <strong>To rent a car, you need a valid driving license, a government-issued ID, and proof of address. International customers may require a passport and international driving permit.
+                      <strong
+                        >To rent a car, you need a valid driving license, a
+                        government-issued ID, and proof of address.
+                        International customers may require a passport and
+                        international driving permit.</strong
+                      >
                     </div>
                   </div>
                 </div>
@@ -351,7 +363,7 @@
                       aria-expanded="false"
                       aria-controls="collapseTwo"
                     >
-                     Is a security deposit required?
+                      Is a security deposit required?
                     </button>
                   </h2>
                   <div
@@ -360,7 +372,9 @@
                     data-bs-parent="#accordionExample"
                   >
                     <div class="accordion-body">
-                    Yes, a refundable security deposit is required at the time of booking. The amount depends on the selected vehicle and rental duration.
+                      Yes, a refundable security deposit is required at the time
+                      of booking. The amount depends on the selected vehicle and
+                      rental duration.
                     </div>
                   </div>
                 </div>
@@ -383,7 +397,8 @@
                     data-bs-parent="#accordionExample"
                   >
                     <div class="accordion-body">
-                     Absolutely. LuxWheels offers professional chauffeur-driven services for luxury, corporate, and event travel.
+                      Absolutely. LuxWheels offers professional chauffeur-driven
+                      services for luxury, corporate, and event travel.
                     </div>
                   </div>
                 </div>
@@ -392,7 +407,68 @@
           </div>
         </div>
       </section>
-      
+
+      <section id="contact">
+        <h1 class="text-center mt-4">Contact us</h1>
+        <div class="container">
+          <div class="row justify-content-center align-items-center g-5">
+            <div class="col-12 col-md-6">
+              <form action="" class="form p-5 m-3">
+                <div class="form-floating mb-3">
+                  <input
+                    type="name"
+                    class="form-control"
+                    id="floatingInput"
+                    placeholder="Enter your name"
+                  />
+                  <label for="floatingInput">Name</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="floatingPassword"
+                    placeholder="enter your email"
+                  />
+                  <label for="floatingPassword">Email</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                  <textarea
+                    name=""
+                    id="floatingMessages"
+                    class="form-control"
+                    placeholder="enter your message"
+                  ></textarea>
+
+                  <label for="floatingMessages">Message</label>
+                </div>
+                <div class="d-grid">
+                  <button class="btn btn-outline-primary">Submit</button>
+                </div>
+              </form>
+            </div>
+            <div class="col-12 col-md-6">
+              <h4><i class="fa-solid fa-location-dot"></i> Address</h4>
+              <p>ABC Street,Ahmadabad-364001</p>
+
+              <h4><i class="fa-solid fa-phone"></i> Call</h4>
+              <p>+91 987654321</p>
+
+              <h4><i class="fa-solid fa-envelope"></i> Email</h4>
+              <p>luxWheels@gmail.com</p>
+
+              <h4>Social Media links</h4>
+              <div class="links">
+                <i class="fa-brands fa-linkedin"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-whatsapp"></i>
+                <i class="fa-brands fa-x-twitter"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
