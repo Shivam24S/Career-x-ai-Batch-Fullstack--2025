@@ -1,0 +1,45 @@
+:root {
+  --gradient-text: linear-gradient(90deg, rgb(5, 184, 255), rgb(255, 8, 255));
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #101a20;
+  color: white;
+}
+
+.navbar-brand {
+  color: var(--gradient-text) !important;
+}
+
+.navbar {
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  top: 10px;
+}
+
+.nav-item a {
+  color: white;
+}
+
+.nav-item a:hover{
+    color: teal;
+}
+
+.nav-item:active {
+  color: white;
+}
+
+/* .profile-pic  {
+  max-height: 500px;
+} */
+
+
+.btn {
+    color: teal;
+}
