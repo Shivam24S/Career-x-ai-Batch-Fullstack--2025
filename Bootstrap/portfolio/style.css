@@ -1,5 +1,10 @@
 :root {
-  --gradient-text: linear-gradient(90deg, rgb(5, 184, 255), rgb(255, 8, 255));
+  --bg-main: #0b1220;
+  --bg-card: rgba(255, 255, 255, 0.05);
+  --text-main: #e5e7eb;
+  --text-muted: #9ca3af;
+  --accent: #22d3ee;
+  --gradient: linear-gradient(90deg, #22d3ee, #a855f7);
 }
 
 * {
@@ -9,37 +14,82 @@
 }
 
 body {
-  background-color: #101a20;
-  color: white;
-}
-
-.navbar-brand {
-  color: var(--gradient-text) !important;
+  background: radial-gradient(circle at top, #111827, #020617);
+  color: var(--text-main);
+  font-family: "Inter", sans-serif;
 }
 
 .navbar {
-  color: white;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  top: 10px;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text-main);
+  backdrop-filter: blur(10px);
+  margin-top: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
-.nav-item a {
-  color: white;
+.navbar-brand {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.5rem;
 }
 
-.nav-item a:hover{
-    color: teal;
+.nav-link {
+  color: var(--text-muted);
+  position: relative;
 }
 
-.nav-item:active {
-  color: white;
+.nav-link:active{
+  color: var(--accent) !important;
 }
 
-/* .profile-pic  {
-  max-height: 500px;
-} */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 0;
+  left: 0px;
+  background-color: var(--accent);
+  bottom: -2px;
+  transition: 1s all;
+}
 
+.nav-link:hover::after {
+  width: 100%;
+}
 
-.btn {
-    color: teal;
+.gradient-text {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-title {
+  color: var(--accent);
+}
+
+.hero-desc {
+  line-height: 30px;
+}
+
+.custom-btn {
+  background: linear-gradient(45deg, #22d3ee, #a855f7);
+  border: none;
+  border-radius: 20px;
+  color: var(--text-main);
+  transition: 1s transform;
+}
+
+.custom-btn:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(137, 11, 255, 0.4);
+}
+
+.profile-pic {
+  max-height: 450px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.section-padding {
+  padding: 100px 40px;
 }
