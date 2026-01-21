@@ -10,6 +10,13 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -57,7 +64,7 @@
       <section id="/">
         <div class="container section-padding">
           <div class="row align-items-center justify-content-between">
-            <div class="col-12 col-md-6 d-flex  flex-column gap-3">
+            <div class="col-12 col-md-6 d-flex flex-column gap-3">
               <h1 class="display-4">
                 Hello I'am <span class="gradient-text"> Shivam</span>
               </h1>
@@ -71,7 +78,9 @@
               </p>
               <div class="d-flex gap-4">
                 <button class="btn custom-btn">Hire Me</button>
-                <button class="btn custom-btn">View My Works</button>
+                <button class="btn btn-outline-primary custom-btn-2 rounded-5">
+                  View My Works
+                </button>
               </div>
             </div>
             <div class="col-12 col-md-4 mt-5">
@@ -79,15 +88,82 @@
                 src="./asset/profilePic2png.png"
                 class="img-fluid profile-pic rounded-4"
                 alt="profilePic"
-              
               />
             </div>
           </div>
         </div>
       </section>
       <section id="About section-padding">
-        <h1 class="text-center mt-3">About</h1>
-        
+        <div class="section-title">
+          <h1 class="text-center mt-3">About</h1>
+          <img
+            src="./asset/curlywaves.svg"
+            class="img-fluid curly-waves"
+            alt="curlywaves"
+          />
+        </div>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <div
+                class="card rounded-5 shadow about-card d-flex justify-content-center align-items-center"
+              >
+                <img
+                  src="./asset/about.png"
+                  class="img-fluid about-pic"
+                  alt="about"
+                />
+                <div
+                  class="card-body d-flex flex-column justify-content-center align-items-center"
+                >
+                  <h2 class="card-title">Shivam</h2>
+                  <p class="card-designation">
+                    Software Engineer & Fullstack Developer
+                  </p>
+                  <div class="card-text">
+                    <hr />
+                    <div class="d-flex gap-5">
+                      <div class="project">
+                        <h3>100+</h3>
+                        <p>Project</p>
+                      </div>
+                      <div class="project">
+                        <h3>3+</h3>
+                        <p>Years</p>
+                      </div>
+                      <div class="project">
+                        <h3>10+</h3>
+                        <p>Awards</p>
+                      </div>
+                    </div>
+                    <hr />
+                    <div class="d-flex flex-column justify-content-center gap-3">
+                      <a
+                        class="btn resume-btn"
+                        target="_blank"
+                        download
+                        href="./asset/Simple_Software_Engineer_Resume.pdf"
+                        >Download Resume</a
+                      >
+                      <button class="btn resume-btn btn-outline-primary">
+                        Contact
+                      </button>
+                    </div>
+                    <hr />
+                    <div class="d-flex gap-4">
+                      <i class="fa-brands fa-linkedin icons"></i>
+                      <i class="fa-brands fa-github icons"></i>
+                      <i class="fa-brands fa-instagram icons"></i>
+                      <i class="fa-brands fa-x-twitter icons"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-8"></div>
+          </div>
+        </div>
       </section>
     </main>
 

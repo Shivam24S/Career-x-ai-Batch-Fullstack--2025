@@ -39,8 +39,8 @@ body {
   position: relative;
 }
 
-.nav-link:active{
-  color: var(--accent) !important;
+.nav-link:hover {
+  color: var(--accent);
 }
 
 .nav-link::after {
@@ -70,6 +70,7 @@ body {
 
 .hero-desc {
   line-height: 30px;
+  color: var(--text-muted);
 }
 
 .custom-btn {
@@ -78,6 +79,10 @@ body {
   border-radius: 20px;
   color: var(--text-main);
   transition: 1s transform;
+  animation-name: upDown;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: no;
 }
 
 .custom-btn:hover {
@@ -90,6 +95,78 @@ body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
+@keyframes upDown {
+  0% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(20px);
+    box-shadow: 0 10px 30px var(--accent);
+  }
+}
+
 .section-padding {
   padding: 100px 40px;
+}
+
+.section-title {
+  font-size: 4rem;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.curly-waves {
+  width: 200px;
+}
+
+.about-card {
+  background-color: var(--bg-main);
+  color: var(--text-muted);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.about-pic {
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+  object-position: top;
+  margin-top: 15px;
+  border: 5px solid var(--accent);
+}
+
+.card-designation {
+  color: var(--accent);
+}
+
+.list-group {
+  background-color: var(--bg-main);
+}
+
+.resume-btn {
+  color: var(--text-main);
+  border-radius: 15px;
+  border: 1px solid white;
+  height: 45px;
+}
+
+.resume-btn:hover {
+  color: var(--bg-main);
+  background: var(--gradient);
+  border: none;
+}
+
+.icons {
+  font-size: 30px;
+}
+
+.icons:hover {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
