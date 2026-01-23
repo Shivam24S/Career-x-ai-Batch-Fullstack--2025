@@ -79,7 +79,7 @@ body {
   border-radius: 20px;
   color: var(--text-main);
   transition: 1s transform;
-  animation-name: upDown;
+  animation-name: btnAnimation;
   animation-duration: 2s;
   animation-iteration-count: infinite;
   animation-direction: no;
@@ -95,12 +95,12 @@ body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
-@keyframes upDown {
+@keyframes btnAnimation {
   0% {
-    transform: translateY(-10px);
+    transform: scale(1);
   }
   100% {
-    transform: translateY(20px);
+    transform: scale(1.1);
     box-shadow: 0 10px 30px var(--accent);
   }
 }
@@ -169,4 +169,45 @@ body {
   background: var(--gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.abt-badge {
+  background: var(--gradient);
+  color: var(--text-main);
+}
+
+.about-card-links {
+  background-color: var(--bg-main);
+  color: var(--text-muted);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+}
+
+.about-card-links-title {
+  color: var(--text-main);
+}
+
+.skill-card {
+  background-color: var(--bg-main);
+  color: white;
+}
+
+.skill-list li::before {
+  content: "🔹";
+  background: var(--accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.skill-list {
+  list-style: none;
+  line-height: 35px;
+  color: var(--text-muted);
+}
+
+.skill-card:hover {
+  transform: translateY(-10px);
+  transition: 0.5s transform;
+ box-shadow: 0 10px 30px var(--accent);
+ opacity: 0.7;
 }
