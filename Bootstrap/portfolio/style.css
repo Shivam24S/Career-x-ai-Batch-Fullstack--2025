@@ -244,7 +244,8 @@ body {
   color: var(--text-main);
 }
 
-.nav-tab-btn {
+.nav-tab-btn,
+.service-btn {
   border: 1px solid var(--text-main);
   border-radius: 20px !important;
   transition-duration: 2s;
@@ -261,5 +262,46 @@ body {
 }
 
 .nav-tab-btn:hover::after {
+  width: 0%;
+}
+
+.service-card {
+  background: var(--bg-main);
+  color: var(--text-muted);
+  width: 350px;
+  border-radius: 20px;
+  transition:
+    1s transform,
+    box-shadow;
+}
+
+.service-card:hover {
+  transform: scale(1.1);
+  z-index: 1;
+  box-shadow: 0 10px 30px var(--accent);
+}
+
+.service-title {
+  color: var(--text-main);
+}
+
+.service-card img {
+  height: 250px;
+  border-radius: 20px;
+}
+
+.service-btn {
+  border: 1px solid;
+  border-color: var(--gradient);
+  background-color: transparent;
+}
+
+.service-btn:hover {
+  background: var(--gradient);
+  color: white;
+  border: none;
+}
+
+.service-btn:hover::after {
   width: 0%;
 }
