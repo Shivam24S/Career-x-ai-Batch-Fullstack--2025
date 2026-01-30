@@ -305,3 +305,49 @@ body {
 .service-btn:hover::after {
   width: 0%;
 }
+
+.testimonials-card {
+  background: var(--bg-main);
+  color: var(--text-muted);
+  border-radius: 30px;
+  transition:
+    1s transform,
+    box-shadow;
+}
+
+.testimonials-title {
+  color: var(--accent);
+}
+
+.testimonials-card:hover {
+  transform: scale(1.1);
+  z-index: 1;
+  box-shadow: 0 10px 30px var(--accent);
+}
+
+.contact-card {
+  background: var(--bg-main);
+  color: var(--text-muted);
+  height: 10vh;
+  width: 20vw;
+  border-radius: 20px;
+  transition:
+    1s transform,
+    box-shadow;
+}
+.contact-title,
+.contact-icon {
+  color: var(--accent);
+}
+
+.contact-card:hover {
+  transform: scale(1.1);
+  z-index: 1;
+  box-shadow: 0 10px 30px var(--accent);
+}
+
+.map {
+  width: 20vw;
+  background: var(--bg-main);
+  border-radius: 20px;
+}
