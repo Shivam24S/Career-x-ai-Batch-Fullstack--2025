@@ -58,6 +58,7 @@ body {
   width: 100%;
 }
 
+
 .gradient-text {
   background: var(--gradient);
   -webkit-background-clip: text;
@@ -90,6 +91,20 @@ body {
   box-shadow: 0 10px 30px rgba(137, 11, 255, 0.4);
 }
 
+.custom-btn-2 {
+  border: 1px solid var(--text-main);
+  border-radius: 20px !important;
+  transition-duration: 2s;
+  transition-property: background;
+  color: white;
+}
+
+.custom-btn-2:hover {
+  background: var(--gradient);
+  color: white;
+  border: none;
+}
+
 .profile-pic {
   max-height: 450px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
@@ -106,7 +121,7 @@ body {
 }
 
 .section-padding {
-  padding: 100px 40px;
+  padding: 10vh 4vh;
 }
 
 .section-title {
@@ -121,7 +136,7 @@ body {
 }
 
 .curly-waves {
-  width: 200px;
+  width:12vw;
 }
 
 .about-card {
@@ -261,6 +276,12 @@ body {
   -webkit-text-fill-color: transparent; */
 }
 
+.custom-btn-2:hover {
+  background: var(--gradient);
+  color: white;
+  border: none;
+}
+
 .nav-tab-btn:hover::after {
   width: 0%;
 }
@@ -328,12 +349,12 @@ body {
 .contact-card {
   background: var(--bg-main);
   color: var(--text-muted);
-  height: 10vh;
-  width: 20vw;
+  
   border-radius: 20px;
   transition:
     1s transform,
     box-shadow;
+    
 }
 .contact-title,
 .contact-icon {
@@ -347,7 +368,35 @@ body {
 }
 
 .map {
-  width: 20vw;
+
   background: var(--bg-main);
   border-radius: 20px;
+}
+
+.form {
+  background-color: var(--bg-main);
+  padding: 3rem;
+  border: none;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  transition: 1s box-shadow;
+}
+
+.form:hover {
+  box-shadow: 0 10px 30px var(--accent);
+}
+
+.form-title{
+  color: var(--accent);
+}
+
+.form-btn {
+  background: linear-gradient(45deg, #22d3ee, #a855f7);
+  border: none;
+  border-radius: 20px;
+  color: var(--text-main);
+  height: 4vh;
 }
