@@ -58,7 +58,6 @@ body {
   width: 100%;
 }
 
-
 .gradient-text {
   background: var(--gradient);
   -webkit-background-clip: text;
@@ -110,6 +109,11 @@ body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
+.profile-pic:hover {
+  z-index: 1;
+  box-shadow: 0 10px 30px var(--accent);
+}
+
 @keyframes btnAnimation {
   0% {
     transform: scale(1);
@@ -136,7 +140,7 @@ body {
 }
 
 .curly-waves {
-  width:12vw;
+  width: 12vw;
 }
 
 .about-card {
@@ -349,12 +353,9 @@ body {
 .contact-card {
   background: var(--bg-main);
   color: var(--text-muted);
-  
+
   border-radius: 20px;
-  transition:
-    1s transform,
-    box-shadow;
-    
+  transition: 1s, box-shadow;
 }
 .contact-title,
 .contact-icon {
@@ -362,13 +363,12 @@ body {
 }
 
 .contact-card:hover {
-  transform: scale(1.1);
+  /* transform: scale(1.1); */
   z-index: 1;
   box-shadow: 0 10px 30px var(--accent);
 }
 
 .map {
-
   background: var(--bg-main);
   border-radius: 20px;
 }
@@ -389,7 +389,7 @@ body {
   box-shadow: 0 10px 30px var(--accent);
 }
 
-.form-title{
+.form-title {
   color: var(--accent);
 }
 
@@ -399,4 +399,9 @@ body {
   border-radius: 20px;
   color: var(--text-main);
   height: 4vh;
+}
+
+.googleMap {
+  width: 450px;
+  height: 20vh;
 }

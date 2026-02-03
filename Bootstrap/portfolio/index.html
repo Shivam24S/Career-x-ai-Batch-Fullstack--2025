@@ -18,10 +18,19 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css"
+      integrity="sha512-csw0Ma4oXCAgd/d4nTcpoEoz4nYvvnk21a8VA2h2dzhPAvjbUIK6V3si7/g/HehwdunqqW18RwCJKpD7rL67Xg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header class="container">
+    <header class="container" data-aos="fade-down">
       <nav class="navbar navbar-expand-lg sticky-top mt-3 rounded-4">
         <div class="container-fluid">
           <a class="navbar-brand" href="#hero">Shivam</a>
@@ -70,7 +79,7 @@
           <div
             class="row d-flex align-items-center justify-content-sm-center justify-content-lg-between"
           >
-            <div class="col-12 col-md-6 d-flex flex-column gap-3">
+            <div class="col-12 col-md-6 d-flex flex-column gap-3" data-aos="fade-right">
               <h1 class="display-4">
                 Hello I'am <span class="gradient-text"> Shivam</span>
               </h1>
@@ -82,15 +91,17 @@
                 frameworks, scalable backend systems, and optimized databases.
                 Focused on performance, security, and clean architecture.
               </p>
-              <div class="d-flex gap-4">
+              <div
+                class="d-flex gap-4 gap-md-5 gap-lg-4 justify-content-lg-start justify-content-md-center justify-content-sm-center"
+              >
                 <button class="btn custom-btn">Hire Me</button>
-                <button class="btn custom-btn-2">View My Works</button>
+                <a  href="#Projects" class="btn custom-btn-2 hvr-pop">View My Works</a>
               </div>
             </div>
-            <div class="col-12 col-md-4 mt-5">
+            <div class="col-12 col-md-4 mt-5 d-flex justify-content-center" data-aos="fade-left">
               <img
                 src="./asset/profilePic2png.png"
-                class="img-fluid profile-pic rounded-4"
+                class="img-fluid profile-pic rounded-4 hvr-skew"
                 alt="profilePic"
               />
             </div>
@@ -98,18 +109,18 @@
         </div>
       </section>
       <section id="About">
-        <div class="section-title">
-          <h1 class="text-center mt-3">About</h1>
+        <div class="section-title" data-aos="fade-up">
+          <h1 class="text-center mt-3" >About</h1>
           <img
             src="./asset/curlywaves.svg"
-            class="img-fluid curly-waves"
+            class="img-fluid curly-waves "
             alt="curlywaves"
           />
         </div>
 
         <div class="container section-padding">
           <div class="row d-flex justify-content-center align-content-center">
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-4" data-aos="flip-left">
               <div
                 class="card rounded-5 shadow about-card d-flex justify-content-center align-items-center"
               >
@@ -169,9 +180,9 @@
               </div>
             </div>
             <div class="col-12 col-md-8">
-              <div class="badge rounded-pill abt-badge mt-2">About Me</div>
+              <div class="badge rounded-pill abt-badge mt-2 ">About Me</div>
 
-              <div class="abt-description mt-5">
+              <div class="abt-description mt-5" data-aos="fade-up">
                 <p class="hero-desc mt-2">
                   I’m Shivam Shrivastav, a passionate Software Engineer and
                   Full-Stack Developer with a strong focus on building scalable,
@@ -188,7 +199,7 @@
                 </p>
               </div>
               <div class="row mb-4 mt-5 g-3">
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-6"  data-aos="fade-up-right">
                   <div class="card about-card-links">
                     <div class="card-body">
                       <h5 class="card-title about-card-links-title">
@@ -198,7 +209,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-6" data-aos="fade-up-left">
                   <div class="card about-card-links">
                     <div class="card-body">
                       <h5 class="card-title about-card-links-title">
@@ -210,7 +221,7 @@
                 </div>
               </div>
               <div class="row mb-4 g-3">
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-6"  data-aos="fade-up-right">
                   <div class="card about-card-links">
                     <div class="card-body">
                       <h5 class="card-title about-card-links-title">
@@ -220,7 +231,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-6" data-aos="fade-up-left">
                   <div class="card about-card-links">
                     <div class="card-body">
                       <h5 class="card-title about-card-links-title">
@@ -231,8 +242,8 @@
                   </div>
                 </div>
               </div>
-              <div class="row mb-4 g-3">
-                <div class="col-12 col-md-6">
+              <div class="row mb-4 g-3"  >
+                <div class="col-12 col-md-6" data-aos="fade-up-right">
                   <div class="card about-card-links">
                     <div class="card-body">
                       <h5 class="card-title about-card-links-title">
@@ -242,7 +253,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-6" data-aos="fade-up-left">
                   <div class="card about-card-links">
                     <div class="card-body">
                       <h5 class="card-title about-card-links-title">
@@ -259,7 +270,7 @@
       </section>
 
       <section id="Skills">
-        <div class="section-title">
+        <div class="section-title" data-aos="fade-up">
           <h1 class="text-center mt-3">Skills</h1>
           <img
             src="./asset/curlywaves.svg"
@@ -270,7 +281,7 @@
 
         <div class="container section-padding">
           <div class="row">
-            <div class="col-12 col-md-4 g-3">
+            <div class="col-12 col-md-4 g-3"  data-aos="fade-up-right">
               <div class="card skill-card rounded-5">
                 <div class="card-body">
                   <h3 class="card-title">
@@ -291,7 +302,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-12 col-md-4 g-3">
+            <div class="col-12 col-md-4 g-3"  data-aos="fade-up">
               <div class="card skill-card rounded-5">
                 <div class="card-body">
                   <h3 class="card-title">
@@ -312,7 +323,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-12 col-md-4 g-3">
+            <div class="col-12 col-md-4 g-3"  data-aos="fade-up-left">
               <div class="card skill-card rounded-5">
                 <div class="card-body">
                   <h3 class="card-title">
@@ -338,7 +349,7 @@
       </section>
 
       <section id="Projects">
-        <div class="section-title">
+        <div class="section-title" data-aos="fade-up">
           <h1 class="text-center mt-3">Projects</h1>
           <img
             src="./asset/curlywaves.svg"
@@ -851,7 +862,7 @@
       </section>
 
       <section id="Service">
-        <div class="section-title">
+        <div class="section-title" data-aos="fade-up">
           <h1 class="text-center mt-3">Service</h1>
           <img
             src="./asset/curlywaves.svg"
@@ -990,7 +1001,7 @@
       </section>
 
       <section id="Testimonials">
-        <div class="section-title">
+        <div class="section-title" data-aos="fade-up">
           <h1 class="text-center mt-3">Testimonials</h1>
           <img
             src="./asset/curlywaves.svg"
@@ -1062,7 +1073,7 @@
       </section>
 
       <section id="Contact">
-        <div class="section-title">
+        <div class="section-title" data-aos="fade-up">
           <h1 class="text-center mt-3">Contact us</h1>
           <img
             src="./asset/curlywaves.svg"
@@ -1079,7 +1090,7 @@
               class="col-12 col-md-5 d-flex flex-column justify-content-center align-items-center gap-1"
             >
               <div
-                class="card contact-card d-flex flex-column justify-content-center align-items-center"
+                class="card contact-card d-flex flex-column justify-content-center align-items-start"
               >
                 <div class="card-body d-flex gap-3 mb-3">
                   <div class="contact-icon fs-1">
@@ -1090,43 +1101,42 @@
                     402, Sunrise Business Park, Gujarat
                   </div>
                 </div>
-              </div>
 
-              <div class="card contact-card">
-                <div class="card-body d-flex gap-3">
-                  <div class="contact-icon fs-1">
-                    <i class="fa-solid fa-phone"></i>
-                  </div>
-                  <div class="card-text">
-                    <h5 class="card-title contact-title">Call</h5>
-                    +91 987654321
+                <div class="">
+                  <div class="card-body d-flex gap-3">
+                    <div class="contact-icon fs-1">
+                      <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div class="card-text">
+                      <h5 class="card-title contact-title">Call</h5>
+                      +91 987654321
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div class="card contact-card">
-                <div class="card-body d-flex gap-3">
-                  <div class="contact-icon fs-1">
-                    <i class="fa-solid fa-envelope"></i>
-                  </div>
-                  <div class="card-text">
-                    <h5 class="card-title contact-title">Email</h5>
-                    shivam@gmail.com
+                <div class="">
+                  <div class="card-body d-flex gap-3">
+                    <div class="contact-icon fs-1">
+                      <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div class="card-text">
+                      <h5 class="card-title contact-title">Email</h5>
+                      shivam@gmail.com
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div class="card map">
-                <div class="card-body">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235013.7484371418!2d72.41493397092245!3d23.020474096870814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e848aba5bd449%3A0x4fcedd11614f6516!2sAhmedabad%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1769769176393!5m2!1sen!2sin"
-                    width="350"
-                    height="320"
-                    style="border-radius: 20px"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
-                  ></iframe>
+                <div class="card map">
+                  <div class="card-body">
+                    <iframe
+                      class="googleMap"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235013.7484371418!2d72.41493397092245!3d23.020474096870814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e848aba5bd449%3A0x4fcedd11614f6516!2sAhmedabad%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1769769176393!5m2!1sen!2sin"
+                      style="border-radius: 20px"
+                      allowfullscreen=""
+                      loading="lazy"
+                      referrerpolicy="no-referrer-when-downgrade"
+                    ></iframe>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1178,5 +1188,13 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 2000,
+        once: true,
+      });
+    </script>
   </body>
 </html>
