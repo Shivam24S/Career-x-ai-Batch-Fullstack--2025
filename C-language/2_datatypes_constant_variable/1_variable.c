@@ -5,20 +5,22 @@
 int main()
 {
 
-    // variable declaration
+    // variable  initialization
 
     int num;
 
-    // variable initialization
+    // variable declaration
 
     num = 10;
+
+    num = 20;
 
     // rules
     // you can't declare variable in same scope
 
     // int num = 10;
 
-    // printf("%d", num);
+    printf("%d", num);
 
 
     return 0;
