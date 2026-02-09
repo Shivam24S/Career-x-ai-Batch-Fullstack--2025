@@ -1,21 +1,23 @@
 
 
 #include <stdio.h>
-#define pi 3.14
+#define Pi 3.14
 
 int main()
 {
 
-    const int num = 10;
+    const int Num = 10;
+
+    // num = 10; you have to assign value at the time of declaration otherwise you will get error
 
     // constant can't reassign value again
     // num = 20;
 
-    printf("%d\n", num);
+    printf("%d\n", Num);
 
     // pi = 4.15; // cant able to change the value
 
-    printf("%f\n", pi);
+    printf("%f\n", Pi);
 
     return 0;
 }
