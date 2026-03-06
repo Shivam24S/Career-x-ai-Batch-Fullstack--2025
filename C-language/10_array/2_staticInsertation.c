@@ -1,15 +1,19 @@
 
 
-
 #include <stdio.h>
 
+int main()
+{
 
-int main(){
+    int marks[5];
 
-int num[5] = {1,2,3,4,5};
+    marks[0] = 100;
+    marks[1] = 90;
+    marks[2] = 80;
+    marks[3] = 70;
+    marks[4] = 60;
 
-
-
+    printf("%d", marks[7]);
 
     return 0;
 }
