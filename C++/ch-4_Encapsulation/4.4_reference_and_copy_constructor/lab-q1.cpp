@@ -2,6 +2,7 @@
 
 #include <iostream>
 using namespace std;
+#include <vector>
 
 class Student
 {
@@ -67,6 +68,65 @@ public:
         cout << "   student rollNo is  " << stu_roll << endl;
         cout << "   student gpa    is  " << stu_GPA << endl;
     }
+
+    ~Student()
+    {
+
+        cout << "student destructor called" << endl;
+    }
+};
+
+class StudentRecordManager
+{
+
+private:
+    vector<Student> students;
+
+public:
+    void addStudent(const Student &s)
+    {
+        students.push_back(s);
+        cout << "student added " << endl;
+    }
+
+    void displayAllStudent() const
+    {
+
+        if (students.empty())
+        {
+
+            cout << "no student data found" << endl;
+            return;
+        }
+        else
+        {
+
+            for (int i = 0; i < students.size(); i++)
+            {
+
+                students[i].studentData();
+            }
+        }
+    }
+
+    void findStudentByRollNo(int rollNo)
+    {
+
+        for (int i = 0; i < students.size(); i++)
+        {
+
+            if (students[i].getRoll() == rollNo)
+            {
+
+                cout << "student found " << endl;
+
+                students[i].studentData();
+                return;
+            }
+        }
+
+        cout << "student not found with this rollNo " << endl;
+    }
 };
 
 int main()
@@ -75,9 +135,18 @@ int main()
     Student s1("alice", 1, 10.0);
     Student s2("charlie", 2, 9.0);
 
-    s1.studentData();
+    StudentRecordManager admin;
 
-    s2.studentData();
+    admin.addStudent(s1);
+    admin.addStudent(s2);
+
+    cout << "all student data " << endl;
+
+    admin.displayAllStudent();
+
+    cout << "finding by roll no " << endl;
+
+    admin.findStudentByRollNo(12);
 
     return 0;
 }
