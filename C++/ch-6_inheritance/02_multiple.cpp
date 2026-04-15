@@ -1,55 +1,60 @@
 
-#include <iostream>
 
+// multiple inheritance
+
+// children has multiple Parent
+
+#include <iostream>
 using namespace std;
 
-class Employee
+class GrandFather
 {
 
 public:
-    string work = "finance department";
+    int bhk = 3;
 
-    void currentWork()
+    void GrandFatherProperty()
     {
 
-        cout << "worker is currently doing " << work << endl;
+        cout << "GrandFather had build " << bhk << " house" << endl;
     };
 };
 
-class Manager : public Employee
+class Father
 {
 
 public:
-    void currentWork()
+    int bhk = 4;
+
+    void FatherProperty()
     {
-        cout << "worker is currently doing " << work << endl;
-    }
+        cout << "Father had build " << bhk << " house" << endl;
+    };
 };
 
-class Owner : public Employee
+class Son : public GrandFather, public Father
 {
 
 public:
-    // string work = "IT department";
+    int bhk = 5;
 
-    // void currentWork()
-    // {
-    //     cout << "worker is currently doing " << work << endl;
-    // }
+    void property()
+    {
+
+        cout << "Son had build " << bhk << " house" << endl;
+    };
 };
 
 int main()
 {
 
-    Manager m;
+    Son s;
 
-    m.currentWork();
+    s.GrandFatherProperty();
 
-    Owner o;
+    s.FatherProperty();
 
-    o.work = "it department";
-
-    o.currentWork();
+    s.property();
 
     return 0;
 }
