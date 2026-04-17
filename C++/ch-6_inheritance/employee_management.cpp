@@ -28,7 +28,7 @@ public:
         cout << "\n emp_salary " << emp_salary << endl;
     }
 
-    ~Employee() {}
+    virtual ~Employee() {}
 };
 
 class FullTimeEmployee : public Employee
@@ -151,19 +151,56 @@ int main()
         else if (choice == 2)
         {
 
-            if (count < 0)
+            if (count == 0)
             {
 
                 cout << "no Employee data found" << endl;
             }
-
-            for (int i = 0; i < count + 1; i++)
+            else
             {
-                employees[i]->display();
+                for (int i = 0; i < count; i++)
+                {
+                    employees[i]->display();
+                }
             }
+        }
+
+        else if (choice == 3)
+        {
+
+            int index;
+
+            cout << "Enter index to delete (0 - " << count - 1 << "): " << endl;
+            cin >> index;
+
+            if (index >= 0 && index < count)
+            {
+
+                delete employees[index];
+
+                for (int i = index; i < count - 1; i++)
+                {
+
+                    employees[i] = employees[i + 1];
+                }
+
+                count--;
+                cout << "employee data deleted " << endl;
+            }
+            else
+            {
+                cout << "invalid index to delete " << endl;
+            };
         };
 
     } while (choice != 4);
+
+    for (int i = 0; i < count; i++)
+    {
+        delete employees[i];
+
+        cout << "memory free " << endl;
+    }
 
     return 0;
 }
