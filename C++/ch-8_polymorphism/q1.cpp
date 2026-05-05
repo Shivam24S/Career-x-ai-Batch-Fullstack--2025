@@ -1,4 +1,5 @@
 
+// static binding and compile time polymorphism , method overloading 
 
 #include <iostream>
 using namespace std;

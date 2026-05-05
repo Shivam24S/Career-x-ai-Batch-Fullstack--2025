@@ -1,4 +1,5 @@
 
+// dynamic binding , runtime polymorphism, overriding
 
 #include <iostream>
 using namespace std;
