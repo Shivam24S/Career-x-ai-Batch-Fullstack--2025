@@ -21,7 +21,7 @@ int main()
         if (divisor <= 0)
         {
 
-            cout << "number can't be divide by zero or negative values " << endl;
+            throw "number can't be divide by zero or negative values";
         }
         else
         {
@@ -31,7 +31,7 @@ int main()
             cout << "the result is  " << result << endl;
         }
     }
-    catch (char *msg)
+    catch (const char *msg)
     {
 
         cout << msg << endl;
