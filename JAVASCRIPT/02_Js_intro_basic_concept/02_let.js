@@ -1,14 +1,18 @@
+
 // now using let
 
+
+  // let variable = "hello";
+
 function checkBlockScope() {
-  let variable = "hello";
+  // let variable = "hello";
 
   console.log("variable value", variable);
 
   if (true) {
     // let variable = "override";
 
-    let blockVariable = "this is block variable";
+    // let blockVariable = "this is block variable";
     console.log("variable value", variable);
   }
 
