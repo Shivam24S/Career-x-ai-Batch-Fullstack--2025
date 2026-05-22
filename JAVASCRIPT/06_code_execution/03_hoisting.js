@@ -10,8 +10,16 @@ console.log(hoistedVariable);
 
 var hoistedVariable;
 
-anotherFunction();
+// anotherFunction();
 
 let anotherFunction = () => {
   console.log("another function");
 };
+
+
+
+let x;
+
+console.log(x);
+
+x=24;
