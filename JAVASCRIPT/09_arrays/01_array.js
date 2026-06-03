@@ -8,7 +8,7 @@ console.log("type of an array is ", typeof vegetables);
 
 // now using array constructor
 
-const fruits = new Array("mango", "banana", "water melon");
+const fruits = new Array("mango", "banana", "water melon", "orange");
 
 console.log("fruits are ", fruits);
 
@@ -35,3 +35,42 @@ console.log("fruits are before", fruits);
 fruits.push("pineapple");
 
 console.log("fruits are after", fruits);
+
+// now using manually
+
+console.log("fruits array ", fruits);
+
+let lastIndex = 0;
+
+for (let elements of fruits) {
+  lastIndex++;
+}
+
+console.log("lastIndex", lastIndex);
+
+fruits[lastIndex] = "mango";
+
+console.log("fruits after", fruits);
+
+function pushMethodManually(newFruit) {
+  console.log("fruits array ", fruits);
+
+  let lastIndex = 0;
+
+  for (let elements of fruits) {
+    lastIndex++;
+  }
+
+  console.log("lastIndex", lastIndex);
+
+  fruits[lastIndex] = newFruit;
+
+  console.log("fruits after", fruits);
+}
+
+pushMethodManually("jamun");
+pushMethodManually("cherry");
+
+fruits.push("litchi");
+
+console.log("fruits after", fruits);
