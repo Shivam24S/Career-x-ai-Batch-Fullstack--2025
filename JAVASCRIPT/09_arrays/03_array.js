@@ -30,3 +30,29 @@ console.log("vegetables value", vegetables);
 vegetables.splice(2, 1, "chilli", "redis");
 
 console.log("vegetables value  after", vegetables);
+
+// length
+
+console.log("vegetables length", vegetables.length);
+
+// now increase the length
+
+vegetables.length = 10;
+
+console.log(
+  "vegetables length and and vegetable",
+  vegetables.length,
+  vegetables,
+);
+
+
+// now decrease the length 
+
+
+vegetables.length =2;
+
+console.log(
+  "vegetables length and and vegetable",
+  vegetables.length,
+  vegetables,
+);
