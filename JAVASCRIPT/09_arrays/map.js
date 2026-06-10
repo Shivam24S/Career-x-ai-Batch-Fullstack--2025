@@ -2,7 +2,7 @@ let numbers = [10, 20, 30, 40, 50, 60];
 
 let result = numbers.map((num) => num * 2);
 
-result = numbers.map((num) => num);
+// result = numbers.map((num) => num);
 
 console.log("result", result);
 

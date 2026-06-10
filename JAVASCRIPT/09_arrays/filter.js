@@ -2,6 +2,10 @@ let numbers = [10, 5, 0, 60, 70, 23, 11, 9, 6, 7];
 
 const evenNumbers = numbers.filter((num) => num % 2 === 0);
 
+const result = numbers.filter((num) => num > 20);
+
+console.log("number greater than 20 ", result);
+
 console.log("even numbers", evenNumbers);
 console.log("original array", numbers);
 
@@ -28,3 +32,8 @@ console.log(
   personDetails.filter((p) => p.age > 60),
 );
 
+const paisa = [100, 50, 200, 500];
+
+const note = paisa.filter((num) => num >= 200);
+
+console.log("note", note);
