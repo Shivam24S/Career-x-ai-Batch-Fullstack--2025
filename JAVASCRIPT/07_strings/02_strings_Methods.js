@@ -12,7 +12,7 @@ console.log(message.replace("g", ""));
 
 console.log(message.replaceAll("g", "G"));
 
-console.log(message.search("morning"));
+console.log(message.search("result","morning"));
 
 console.log(message.indexOf("good", 4));
 

@@ -25,3 +25,36 @@ form.addEventListener("submit", (event) => {
 
 
 })
+
+
+
+const doubleClick = document.getElementById("dbl");
+
+
+doubleClick.addEventListener("dblclick", () => {
+
+    alert("double clicked")
+})
+
+
+
+
+const randomText = document.getElementById("mouseOver");
+
+
+randomText.addEventListener("mouseover", () => {
+
+    randomText.style.color = "red"
+})
+
+randomText.addEventListener("mouseout", () => {
+
+    randomText.style.color = "black"
+})
+
+
+let key = document.getElementById("key")
+
+key.addEventListener("keyup", (e) => {
+    console.log(e.key)
+})
