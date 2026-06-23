@@ -8,6 +8,7 @@ console.log("another fruits", anotherFruits);
 
 function movies(...movies) {
   console.log("i have these movies available ", ...movies);
+  console.log("i have  movie available ", movies[0]);
 }
 
 movies("3 idiots", "saiyara", "pk");
