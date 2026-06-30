@@ -1,6 +1,8 @@
 function order() {
     let item = ["samosa", "gathiya"];
 
+    item = "";
+
     return new Promise((resolve, reject) => {
         if (item.length === 0) {
             return reject("please add item in cart to proceed");
@@ -36,7 +38,7 @@ function itemPrepare(item) {
             setTimeout(() => {
                 resolve(item);
 
-                console.log("item prepared")
+                console.log("item prepared");
             }, 2000);
         }
     });
@@ -52,31 +54,54 @@ function foodDelivered(item) {
             setTimeout(() => {
                 resolve(item);
 
-                console.log("food delivered")
+                console.log("food delivered");
             }, 2000);
         }
     });
 }
 
+// async function foodOrder() {
 
+//     const food = await order()
+
+//     const orderData = await orderReceived(food)
+
+//     const prepare = await itemPrepare(orderData);
+
+//     const delivered = await foodDelivered(prepare)
+
+//     console.log("this will wait until upper programme execution finished")
+
+// }
+
+// foodOrder()
+
+// console.log("this will not wait")
+
+// now using try catch
 
 async function foodOrder() {
+    try {
+        const food = await order();
 
+        const orderData = await orderReceived(food);
 
-    const food = await order()
+        const prepare = await itemPrepare(orderData);
 
-    const orderData = await orderReceived(food)
+        const delivered = await foodDelivered(prepare);
 
-    const prepare = await itemPrepare(orderData);
-
-    const delivered = await foodDelivered(prepare)
-
-
-    console.log("this will wait until upper programme execution finished")
-
-
+        console.log("this will wait until upper programme execution finished");
+    } catch (error) {
+        console.log(error);
+    }
 }
 
-foodOrder()
+foodOrder();
 
-    console.log("this will not wait")
+console.log("this will print")
+
+
+setTimeout(() => {
+
+    console.log("this will print after 5s")
+}, 5000)
