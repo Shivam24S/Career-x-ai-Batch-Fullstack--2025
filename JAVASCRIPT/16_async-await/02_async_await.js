@@ -60,19 +60,19 @@ function foodDelivered(item) {
     });
 }
 
-// async function foodOrder() {
+async function foodOrder() {
 
-//     const food = await order()
+    const food = await order()
 
-//     const orderData = await orderReceived(food)
+    const orderData = await orderReceived(food)
 
-//     const prepare = await itemPrepare(orderData);
+    const prepare = await itemPrepare(orderData);
 
-//     const delivered = await foodDelivered(prepare)
+    const delivered = await foodDelivered(prepare)
 
-//     console.log("this will wait until upper programme execution finished")
+    // console.log("this will wait until upper programme execution finished")
 
-// }
+}
 
 // foodOrder()
 
@@ -90,7 +90,7 @@ async function foodOrder() {
 
         const delivered = await foodDelivered(prepare);
 
-        console.log("this will wait until upper programme execution finished");
+        // console.log("this will wait until upper programme execution finished");
     } catch (error) {
         console.log(error);
     }
@@ -98,7 +98,7 @@ async function foodOrder() {
 
 foodOrder();
 
-console.log("this will print")
+// console.log("this will print")
 
 
 setTimeout(() => {
