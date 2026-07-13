@@ -74,6 +74,12 @@ let products = [
   },
 ];
 
+// localStorage.clear();
+
+let localCartItem = JSON.parse(localStorage.getItem("cartList")) || [];
+
+console.log("localCartItem", localCartItem);
+
 function showProduct() {
   const productList = document.getElementById("product-list");
 
@@ -87,7 +93,7 @@ function showProduct() {
   <div class="card-body">
     <h5 class="card-title">${p.name}</h5>
     <p class="card-text"> ₹${p.price}</p>
-    <a href="#" class="btn btn-primary">add to cart</a>
+    <button  class="btn btn-primary" onclick="addToCart(${p.id})" >add to cart</button>
   </div>
 </div>
         
@@ -100,20 +106,116 @@ showProduct();
 
 // localStorage
 
-const data = {
-  name: "s25 ultra",
-  price: 84999,
-  qty: 1,
-};
+// const data = {
+//   name: "s25 ultra",
+//   price: 84999,
+//   qty: 1,
+// };
 
-// setItem,getItem,
+// // setItem,getItem,
 
-localStorage.setItem("data", JSON.stringify(data));
+// localStorage.setItem("data", JSON.stringify(data));
 
-// getItem
+// // getItem
 
-const productData = JSON.parse(localStorage.getItem("data"));
+// const productData = JSON.parse(localStorage.getItem("data"));
 
-console.log("product data", productData);
+// console.log("product data", productData);
 
-document.getElementById("name").innerHTML = productData.name;
+// document.getElementById("name").innerHTML = productData.name;
+
+// function addToCart(id) {
+
+//   let product = localCartItem.find((p) => p.id === id);
+
+//   console.log(" already Product", product);
+
+//   if (product) {
+//     product.qty++;
+
+//     console.log("qty increased");
+//   } else {
+//      product = products.find((p) => p.id === id);
+
+//     console.log("new product", product);
+
+//     localCartItem.push({...product, qty: 1 });
+
+//     console.log("localCartItem", localCartItem);
+
+//     localStorage.setItem("cartList", JSON.stringify(localCartItem));
+
+//     alert("product added");
+//   }
+// }
+
+function addToCart(id) {
+  try {
+    let productItem = localCartItem.find((p) => p.id === id);
+
+    console.log("already product", productItem);
+
+    if (productItem) {
+      productItem.qty++;
+    } else {
+      productItem = products.find((p) => p.id === id);
+
+      localCartItem.push({ ...productItem, qty: 1 });
+    }
+
+    updateLocalStorageData();
+
+    alert("item added");
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+function updateLocalStorageData() {
+  localStorage.setItem("cartList", JSON.stringify(localCartItem));
+}
+
+function showCartModal() {
+  const cartModal = document.getElementById("cartModal");
+
+  const modal = new bootstrap.Modal(cartModal);
+
+  modal.show();
+
+  updateLocalStorageData();
+
+  showCartItems();
+}
+
+function showCartItems() {
+  try {
+    const cartTable = document.getElementById("cartTable");
+
+    cartTable.innerHTML = "";
+
+    localCartItem.forEach((p) => {
+      cartTable.innerHTML += `
+      <tr>
+      <td>${p.id}</td>
+      <td>  <img  src="${p.image}" class="img-fluid" height="40px" width="40px" /> </td>
+      <td>${p.name}</td>
+      <td>₹${p.price}</td>
+      <td>
+      
+      
+      <div class="d-flex gap-2 align-items-center justify-content-center" >
+
+      <button  class="btn btn-outline-success" >+</button>
+      <h4>${p.qty}</h4>
+         <button  class="btn btn-outline-danger" >-</button>
+      </div>
+      
+      </td>
+
+      <td> <button class="btn btn-danger">remove</button> </td>
+      </tr>
+
+      `;
+    });
+  } catch (error) {}
+}
