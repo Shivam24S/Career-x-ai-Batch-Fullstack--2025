@@ -173,6 +173,8 @@ function addToCart(id) {
 
 function updateLocalStorageData() {
   localStorage.setItem("cartList", JSON.stringify(localCartItem));
+  showCartItems();
+  total();
 }
 
 function showCartModal() {
@@ -199,23 +201,105 @@ function showCartItems() {
       <td>${p.id}</td>
       <td>  <img  src="${p.image}" class="img-fluid" height="40px" width="40px" /> </td>
       <td>${p.name}</td>
-      <td>₹${p.price}</td>
+      <td>₹${p.price * p.qty}</td>
       <td>
       
       
       <div class="d-flex gap-2 align-items-center justify-content-center" >
 
-      <button  class="btn btn-outline-success" >+</button>
+      <button  class="btn btn-outline-success" onclick="increase(${p.id})" >+</button>
       <h4>${p.qty}</h4>
-         <button  class="btn btn-outline-danger" >-</button>
+         <button  class="btn btn-outline-danger" onclick="decrease(${p.id})" >-</button>
       </div>
       
       </td>
 
-      <td> <button class="btn btn-danger">remove</button> </td>
+      <td> <button class="btn btn-danger" onclick="remove(${p.id})" >remove</button> </td>
       </tr>
 
       `;
     });
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+function increase(id) {
+  try {
+    const product = localCartItem.find((p) => p.id === id);
+
+    if (product) {
+      product.qty++;
+    }
+
+    updateLocalStorageData();
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+function decrease(id) {
+  try {
+    const product = localCartItem.find((p) => p.id === id);
+
+    if (product) {
+      product.qty--;
+    }
+
+    if (product.qty === 0) {
+      localCartItem = localCartItem.filter((p) => p.id !== id);
+    }
+    updateLocalStorageData();
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+function remove(id) {
+  try {
+    localCartItem = localCartItem.filter((p) => p.id !== id);
+    updateLocalStorageData();
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+function total() {
+  const total = document.getElementById("total");
+
+  total.innerHTML = "";
+
+  const totalAmount = localCartItem.reduce((acc, curr) => {
+    return (acc += curr.price * curr.qty);
+  }, 0);
+
+  total.innerHTML = `₹ ${totalAmount}`;
+
+  console.log("total amount", totalAmount);
+}
+
+
+function checkOut() {
+
+  try {
+
+    if (localCartItem.length === 0) {
+      return alert("your cart is empty please add item to checkout")
+    }
+
+    alert("your order placed successfully")
+
+    localCartItem = [];
+
+    updateLocalStorageData();
+
+    const cartModal = document.getElementById("cartModal");
+
+    const modal = new bootstrap.Modal(cartModal);
+
+    modal.hide();
+
+  } catch (error) {
+    console.log(error);
+  }
 }
