@@ -29,7 +29,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav m-auto mb-2 mb-lg-0 gap-3">
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
@@ -39,6 +39,15 @@
                   onclick="showCartModal()"
                 >
                   Cart
+                </button>
+              </li>
+
+              <li class="nav-item">
+                <button
+                  class="btn btn-outline-primary"
+                  onclick="addProductModalShow()"
+                >
+                  Add Product
                 </button>
               </li>
             </ul>
@@ -92,17 +101,88 @@
             </div>
             <div class="modal-footer d-flex justify-content-between">
               <h3 id="total"></h3>
-              <div><button
+              <div>
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-success"
+                  onclick="checkOut()"
+                >
+                  check out
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal" id="addProductModal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Add Product</h5>
+              <button
                 type="button"
-                class="btn btn-secondary"
+                class="btn-close"
                 data-bs-dismiss="modal"
-              >
-                Close
-              </button>
-              <button type="button" class="btn btn-success" onclick="checkOut()">
-               check out
-              </button></div>
-              
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form id="addProductForm">
+                <div class="form-floating mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="ProductName"
+                    name="ProductName"
+                    placeholder="Product Name"
+                    required
+                  />
+                  <label for="ProductName">Product Name</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="ProductPrice"
+                    name="ProductPrice"
+                    placeholder="Product Price"
+                    required
+                  />
+                  <label for="ProductPrice">Product Price</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="ProductImage"
+                    name="ProductImage"
+                    placeholder="Product Image"
+                    required
+                  />
+                  <label for="ProductImage">Product Image</label>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <button type="submit" class="btn btn-primary">
+                    Add Product
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
         </div>

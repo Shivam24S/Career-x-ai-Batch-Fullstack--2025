@@ -94,6 +94,7 @@ function showProduct() {
     <h5 class="card-title">${p.name}</h5>
     <p class="card-text"> ₹${p.price}</p>
     <button  class="btn btn-primary" onclick="addToCart(${p.id})" >add to cart</button>
+    <button  class="btn btn-danger" onclick="deleteProduct(${p.id})" >Delete</button>
   </div>
 </div>
         
@@ -278,16 +279,13 @@ function total() {
   console.log("total amount", totalAmount);
 }
 
-
 function checkOut() {
-
   try {
-
     if (localCartItem.length === 0) {
-      return alert("your cart is empty please add item to checkout")
+      return alert("your cart is empty please add item to checkout");
     }
 
-    alert("your order placed successfully")
+    alert("your order placed successfully");
 
     localCartItem = [];
 
@@ -298,8 +296,56 @@ function checkOut() {
     const modal = new bootstrap.Modal(cartModal);
 
     modal.hide();
-
   } catch (error) {
     console.log(error);
   }
+}
+
+function addProductModalShow() {
+  const addProductModal = document.getElementById("addProductModal");
+
+  const modal = new bootstrap.Modal(addProductModal);
+
+  modal.show();
+}
+
+document.getElementById("addProductModal").addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const name = document.getElementById("ProductName").value.trim();
+  const price = document.getElementById("ProductPrice").value.trim();
+  const image = document.getElementById("ProductImage").value.trim();
+
+  if (!name || !price || !image) {
+    alert("product detail required");
+  }
+
+  const newProduct = {
+    id: new Date().getTime(),
+    name,
+    price,
+    image,
+  };
+
+  products.push({ ...newProduct });
+
+  console.log("all products", products);
+
+  alert("product added successfully");
+
+  showProduct();
+});
+
+function deleteProduct(id) {
+  const product = products.find((p) => p.id === id);
+
+  if (!product) {
+    alert("product not found");
+  }
+
+  products = products.filter((p) => p.id !== id);
+
+  alert("product deleted");
+
+  showProduct();
 }
