@@ -94,6 +94,7 @@ function showProduct() {
     <h5 class="card-title">${p.name}</h5>
     <p class="card-text"> ₹${p.price}</p>
     <button  class="btn btn-primary" onclick="addToCart(${p.id})" >add to cart</button>
+    <button  class="btn btn-warning" onclick="updateProduct(${p.id})" >update</button>
     <button  class="btn btn-danger" onclick="deleteProduct(${p.id})" >Delete</button>
   </div>
 </div>
@@ -348,4 +349,53 @@ function deleteProduct(id) {
   alert("product deleted");
 
   showProduct();
+}
+
+function updateProduct(id) {
+  try {
+    const updateProductModal = document.getElementById("updateProductModal");
+
+    const modal = new bootstrap.Modal(updateProductModal);
+
+    modal.show();
+
+    const product = products.find((p) => p.id === id);
+
+    if (!product) {
+      alert("product not found");
+    }
+
+    document.getElementById("updateProductName").value = product.name;
+    document.getElementById("updateProductPrice").value = product.price;
+    document.getElementById("updateProductImage").value = product.image;
+
+    const index = products.findIndex((p) => p.id === id);
+
+    if (index === -1) {
+      alert("product not found");
+    }
+
+    const form = document.getElementById("updateProductForm");
+
+    form.onsubmit = function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("updateProductName").value.trim();
+      const price = document.getElementById("updateProductPrice").value.trim();
+      const image = document.getElementById("updateProductImage").value.trim();
+
+      products[index] = {
+        ...products[index],
+        name,
+        price,
+        image,
+      };
+
+      alert("product detail updated");
+
+      modal.hide()
+
+      showProduct();
+    };
+  } catch (error) {}
 }

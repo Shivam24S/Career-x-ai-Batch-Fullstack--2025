@@ -187,6 +187,73 @@
           </div>
         </div>
       </div>
+
+        <div class="modal" id="updateProductModal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Edit Product Details</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form id="updateProductForm">
+                <div class="form-floating mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="updateProductName"
+                    name="updateProductName"
+                    placeholder="Product Name"
+                    required
+                  />
+                  <label for="ProductName">update Product Name</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="updateProductPrice"
+                    name="updateProductPrice"
+                    placeholder="Product Price"
+                    required
+                  />
+                  <label for="ProductPrice">update Product Price</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="updateProductImage"
+                    name="updateProductImage"
+                    placeholder="Product Image"
+                    required
+                  />
+                  <label for="ProductImage">update Product Image</label>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <button type="submit" class="btn btn-primary">
+                    update Product
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </main>
 
     <script
