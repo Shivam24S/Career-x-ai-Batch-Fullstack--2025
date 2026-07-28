@@ -21,17 +21,17 @@
           <h1 class="text-center mt-3 text-success">Quiz</h1>
 
           <div class="d-flex justify-content-between">
-            <div class="qnsNumber text-primary fs-5">Qns-1/10</div>
+            <div id="qnsNumber" class=" text-primary fs-5"></div>
             <div class="timer fs-5 text-danger">Time Left 30s</div>
           </div>
 
           <h3 id="qns" class="text-center ">Question will be appear here</h3>
 
-          <div class="row" id="options">
+          <div class="row g-3" id="options">
          
           </div>
 
-          <button class="btn btn-outline-primary align-ite">Next Qns</button>
+          <button id="next-btn" onclick="nextQns()" class="btn btn-outline-success mb-4 align-ite">Next Qns</button>
         </div>
       </div>
     </div>
