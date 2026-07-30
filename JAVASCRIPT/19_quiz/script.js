@@ -122,12 +122,27 @@ loadQns();
 function nextQns() {
   if (selectedAnswer === quizData[currentIndex].correctAnswer) {
     score++;
-    loadQns();
+   
   }
 
   if (currentIndex < quizData.length - 1) {
     selectedAnswer = null;
     currentIndex++;
     loadQns();
+  } else {
+    quizResult();
   }
+}
+
+function quizResult() {
+  const quizResult = document.getElementById("quiz-result");
+
+  quizResult.innerHTML = `
+  
+  
+  <h2 class="text-center" > Quiz Result 🎉</h2>
+
+  <h3 class="text-center">  ${score}/${quizData.length} </h3>
+
+  `;
 }
