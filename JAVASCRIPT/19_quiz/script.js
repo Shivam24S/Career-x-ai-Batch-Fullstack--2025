@@ -87,10 +87,9 @@ let selectedAnswer = null;
 
 let userAnswers = [];
 
-let timer
+let timer;
 
-
-let timeLeft=30
+let timeLeft = 30;
 
 function loadQns() {
   let currentQns = quizData[currentIndex];
@@ -130,18 +129,37 @@ function loadQns() {
 
     col.appendChild(button);
   });
+startTimer()
+  
 }
 
 loadQns();
 
+function startTimer() {
+  let timerElement = document.getElementById("timer");
 
-function startTimer(){
+  timerElement.innerText = `Time Left ${timeLeft}`;
 
-  let timerElement = document.getElementById("timer")
+  clearInterval(timer);
 
+  timeLeft = 30;
 
+  timer = setInterval(() => {
+    (timeLeft--, (timerElement.innerText = `Time Left ${timeLeft}`));
+
+    if (timeLeft === 0) {
+      userAnswers.push({
+        qns: quizData[currentIndex].qns,
+        answer: null,
+        options: quizData[currentIndex].options,
+        correctAnswer: quizData[currentIndex].correctAnswer,
+      });
+      nextQns()
+
+      loadQns();
+    }
+  }, 1000);
 }
-
 
 function nextQns() {
   if (selectedAnswer === quizData[currentIndex].correctAnswer) {
