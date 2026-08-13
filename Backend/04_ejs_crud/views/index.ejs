@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>student</title>
+</head>
+<body>
+
+    <h1>student list</h1>
+    
+  <!-- ejs syntax -> js expression -->
+    <% %>
+
+    <!-- when you want to show data -->
+    <%= %>
+
+    <!-- js operation we are performing -->
+
+    <!-- studentList.forEach((s)=>s.name) -->\
+
+    <a href="/add">add student</a>
+
+
+    <ul>
+   <%studentList.forEach((s)=>{%>
+        
+    <li><%=s.name%></li>
+        
+    <%})%>
+    </ul>
+
+ 
+</body>
+</html>
