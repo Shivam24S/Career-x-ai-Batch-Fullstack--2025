@@ -17,7 +17,7 @@
 
     <!-- js operation we are performing -->
 
-    <!-- studentList.forEach((s)=>s.name) -->\
+    <!-- studentList.forEach((s)=>s.name) -->
 
     <a href="/add">add student</a>
 
@@ -25,8 +25,14 @@
     <ul>
    <%studentList.forEach((s)=>{%>
         
-    <li><%=s.name%></li>
-        
+    <li><%=s.name%>
+    <a href="/delete/<%=s.id%>">delete</a>
+
+    <a href="/edit/<%=s.id%>">edit</a>
+
+    </li>
+
+
     <%})%>
     </ul>
 

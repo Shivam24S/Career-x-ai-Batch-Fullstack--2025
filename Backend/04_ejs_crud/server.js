@@ -6,7 +6,7 @@ app.set("view engine", "ejs");
 
 app.use(express.urlencoded({ extended: true }));
 
-const studentList = [
+let studentList = [
   { id: 1, name: "alice" },
   { id: 2, name: "dexter" },
   {
@@ -38,6 +38,44 @@ app.post("/add", (req, res) => {
   };
 
   studentList.push(newStudent);
+
+  res.redirect("/");
+});
+
+app.get("/edit/:id", (req, res) => {
+  const { id } = req.params;
+
+  const student = studentList.find((s) => s.id === Number(id));
+
+  if (!student) {
+    res.json("student not found");
+  }
+
+  res.render("edit", { student });
+});
+
+app.post("/edit/:id", (req, res) => {
+  const { id } = req.params;
+
+  console.log("id",id)
+
+  const student = studentList.findIndex((s) => s.id === Number(id));
+
+  console.log("studentIndex",student)
+
+  const { name } = req.body;
+
+  console.log("form data",name)
+
+  studentList[student].name = name;
+
+  res.redirect("/");
+});
+
+app.get("/delete/:id", (req, res) => {
+  const { id } = req.params;
+
+  studentList = studentList.filter((s) => s.id !== Number(id));
 
   res.redirect("/");
 });
