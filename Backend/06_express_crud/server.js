@@ -8,16 +8,16 @@ app.get("/", (req, res) => {
 });
 
 const taskList = [
-//   {
-//     id: 1,
-//     task: "learn",
-//     description: "you have to learn daily new things",
-//   },
-//   {
-//     id: 2,
-//     task: "practice",
-//     description: "you have to do practice daily for",
-//   },
+  {
+    id: 1,
+    task: "learn",
+    description: "you have to learn daily new things",
+  },
+  {
+    id: 2,
+    task: "practice",
+    description: "you have to do practice daily for",
+  },
 ];
 
 app.get("/taskList", (req, res, next) => {
@@ -26,9 +26,27 @@ app.get("/taskList", (req, res, next) => {
       return res.json({ message: "no task data found" });
     }
 
-    res.json({ message: "task data fetched successfully", taskList });
+    res.json({success:true, message: "task data fetched successfully", taskList });
   } catch (error) {
     next(new HttpError(error.message, 500));
+  }
+});
+
+app.get("/taskList/:id", (req, res, next) => {
+  try {
+    const { id } = req.params;
+
+    const task = taskList.find((t) => t.id === Number(id));
+
+    if (task === undefined) {
+      return res.json({ message: "no task data found" });
+    }
+
+    res.status(200).json({success:true,message:"task found with this id",task})
+
+
+  } catch (error) {
+      next(new HttpError(error.message, 500));
   }
 });
 
