@@ -134,17 +134,51 @@ app.patch("/task/:id", (req, res, next) => {
       );
     }
 
-    return res
-      .status(200)
-      .json({
-        success: true,
-        message: "task data updated successfully",
-        updateTask,
-      });
+    return res.status(200).json({
+      success: true,
+      message: "task data updated successfully",
+      updateTask,
+    });
   } catch (error) {
     next(new HttpError(error.message, 500));
   }
 });
+
+app.put("/task/:id",(req,res,next)=>{
+
+  try {
+    
+    const {id} = req.params;
+
+
+    const index = taskList.findIndex((t)=>t.id === Number(id))
+
+    if(index === -1){
+      return next(new HttpError("task with this id not found",404))
+    }
+
+    const {task,description} = req.body;
+
+    // taskList[index] = {task,description}
+
+    taskList[index] = {
+      ...taskList[index],
+      task:task || taskList[index].task,
+      description:description || taskList[index].description
+    }
+
+    return res.status(200).json({
+      success: true,
+      message: "task data updated successfully",
+      updateTask:taskList[index] ,
+    });
+
+  } catch (error) {
+     next(new HttpError(error.message, 500));
+  }
+
+})
+
 
 // undefined routes
 app.use((req, res, next) => {
