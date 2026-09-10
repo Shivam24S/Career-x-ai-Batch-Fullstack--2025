@@ -1,8 +1,23 @@
+// third party modules
 import express from "express";
+
+
+// middleware
 import httpError from "./middlewares/HttpError.js";
+
+// locally 
 import connectDB from "./config/db.js";
 
+
+// routes
+import studentRoutes from "./routes/student.route.js"
+ 
+
 const app = express();
+
+app.use(express.json())
+
+app.use("/student",studentRoutes)
 
 app.get("/", (req, res) => {
   res.json({ message: "hello from server" });
