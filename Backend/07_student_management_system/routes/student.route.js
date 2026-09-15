@@ -1,14 +1,21 @@
 
 
 import express from "express"
-import add from "../controller/student.controller.js"
+import studentController from "../controller/student.controller.js"
 
 
 
 const router = express.Router();
 
 
-router.post("/add",add)
+router.post("/add", studentController.add)
 
+router.get("/allStudents", studentController.getAllStudentData)
+
+router.delete("/deleteAll", studentController.deleteAll)
+
+router.get("/:id", studentController.getStudentById)
+
+router.delete("/:id", studentController.deleteStudentById)
 
 export default router
