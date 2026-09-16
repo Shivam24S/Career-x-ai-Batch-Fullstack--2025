@@ -18,4 +18,8 @@ router.get("/:id", studentController.getStudentById)
 
 router.delete("/:id", studentController.deleteStudentById)
 
+// router.patch("/:id",studentController.updateStudent)
+
+router.patch("/:id",studentController.manualUpdate)
+
 export default router
