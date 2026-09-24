@@ -84,4 +84,82 @@ const deleteById = async (req, res, next) => {
   }
 };
 
-export default { add, allEmployeeData, getEmpById, deleteById };
+const deleteAllEmployee = async (req, res, next) => {
+  try {
+    const deleteAllEmp = await EmployeeModel.deleteMany();
+
+    res
+      .status(200)
+      .json({ success: true, message: "all employee deleted successfully" });
+  } catch (error) {
+    return next(new HttpError(error.message, 500));
+  }
+};
+
+const update = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+
+    const updatedEmp = await EmployeeModel.findByIdAndUpdate(id, req.body, {
+      new: true,
+      runValidators: true,
+    });
+
+    if (!updatedEmp) {
+      return next(new HttpError("failed to update emp detail", 500));
+    }
+    res.status(200).json({
+      success: true,
+      message: "emp detail updated successfully",
+      updatedEmp,
+    });
+  } catch (error) {
+    return next(new HttpError(error.message, 500));
+  }
+};
+
+const updateManually = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+
+    const employee = await EmployeeModel.findById(id);
+
+    if (!employee) {
+      return next(new HttpError("employee not found", 404));
+    }
+
+    const updates = Object.keys(req.body);
+
+    const allowedFields = ["name", "mobileNo"];
+
+    const isValidUpdate = updates.every((field) =>
+      allowedFields.includes(field),
+    );
+
+    if (!isValidUpdate) {
+      return next(new HttpError("only allowed field can be updated", 400));
+    }
+
+    updates.forEach((u) => {
+      employee[u] = req.body[u];
+    });
+
+    res.status(200).json({
+      success: true,
+      message: "employee data updated successfully",
+      employee,
+    });
+  } catch (error) {
+    return next(new HttpError(error.message, 500));
+  }
+};
+
+export default {
+  add,
+  allEmployeeData,
+  getEmpById,
+  deleteById,
+  deleteAllEmployee,
+  // update,
+  updateManually,
+};
