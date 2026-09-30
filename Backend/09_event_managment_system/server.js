@@ -4,11 +4,15 @@ import dotenv from "dotenv";
 import HttpError from "./middleware/HttpError.js";
 import connectDB from "./config/db.js";
 
+import eventRouter from "./router/event.routes.js";
+
 dotenv.config({ path: "./.env" });
 
 const app = express();
 
 app.use(express.json());
+
+app.use("/event", eventRouter);
 
 app.get("/", (req, res) => {
   res.status(200).json("hello from server");

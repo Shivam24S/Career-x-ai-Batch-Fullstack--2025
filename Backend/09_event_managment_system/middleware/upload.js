@@ -23,6 +23,11 @@ const storage = multer.diskStorage({
 
     cb(null, folderName);
   },
+  filename: (req, file, cb) => {
+    const uniqueName = `${Date.now()}-${file.originalname}`;
+
+    cb(null, uniqueName);
+  },
 });
 
 const fileFilter = (req, file, cb) => {
@@ -32,16 +37,16 @@ const fileFilter = (req, file, cb) => {
 
   if (file.fieldname === "eventDocuments") {
     if (documentTypes.includes(file.mimetype)) {
-      cb(null, true);
+     return cb(null, true);
     } else {
-      cb("only pdf format is allowed");
+      return cb("only pdf format is allowed");
     }
   }
 
   if (imagesTypes.includes(file.mimetype)) {
-    cb(null, true);
+  return cb(null, true);
   } else {
-    cb("only jpg,png,jpeg image format is allowed");
+    return cb("only jpg,png,jpeg image format is allowed");
   }
 };
 
