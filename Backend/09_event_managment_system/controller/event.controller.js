@@ -1,6 +1,7 @@
 import eventModel from "../model/event.model.js";
 
 import HttpError from "../middleware/HttpError.js";
+import fs from "fs";
 
 const add = async (req, res, next) => {
   try {
@@ -40,4 +41,73 @@ const add = async (req, res, next) => {
   }
 };
 
-export default { add };
+const allEvents = async (req, res, next) => {
+  try {
+    const eventList = await eventModel.find({});
+
+    if (eventList.length === 0) {
+      return next(new HttpError("event not found", 404));
+    }
+
+    res.status(200).json({
+      success: true,
+      message: "event list fetched successfully",
+      total: eventList.length,
+      eventList,
+    });
+  } catch (error) {
+    return next(new HttpError(error.message, 500));
+  }
+};
+
+const eventById = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const event = await eventModel.findById(id);
+    if (!event) {
+      return next(new HttpError("event not found", 404));
+    }
+
+    res.status(200).json({
+      success: true,
+      message: "Event Find Successfully",
+      event,
+    });
+  } catch (error) {
+    return next(new HttpError(error.message, 500));
+  }
+};
+
+const deleteById = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const events = await eventModel.findByIdAndDelete(id);
+
+    if (!events) {
+      return next(new HttpError("event not found", 404));
+    }
+
+    const filesToDelete = [
+      ...events.eventBanners,
+      ...events.eventDocuments,
+      ...events.eventImages,
+      events.eventPoster,
+      ...events.eventSpeakers,
+    ];
+
+    filesToDelete.forEach((file) => {
+      if (file) {
+        fs.unlinkSync(file);
+      }
+    });
+
+    res.status(200).json({
+      success: true,
+      message: "Event deleted Successfully",
+    });
+  } catch (error) {
+    return next(new HttpError(error.message, 500));
+  }
+};
+
+export default { add, allEvents, eventById, deleteById };

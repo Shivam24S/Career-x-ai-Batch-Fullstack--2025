@@ -31,4 +31,8 @@ router.post(
   eventController.add,
 );
 
+router.get("/allEvents", eventController.allEvents);
+router.get("/eventById/:id", eventController.eventById);
+router.delete("/delete/:id", eventController.deleteById);
+
 export default router;
