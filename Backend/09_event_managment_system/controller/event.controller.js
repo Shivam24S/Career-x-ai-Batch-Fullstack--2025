@@ -96,7 +96,7 @@ const deleteById = async (req, res, next) => {
     ];
 
     filesToDelete.forEach((file) => {
-      if (file) {
+      if (fs.existsSync(file)) {
         fs.unlinkSync(file);
       }
     });
@@ -110,4 +110,61 @@ const deleteById = async (req, res, next) => {
   }
 };
 
-export default { add, allEvents, eventById, deleteById };
+const updateEvent = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+
+    const eventToUpdate = await eventModel.findById(id);
+
+    console.log("event", eventToUpdate);
+
+    if (!eventToUpdate) {
+      return next(new HttpError("no event found", 404));
+    }
+
+    const updates = Object.keys(req.body);
+
+    const validUpdates = [
+      "eventName",
+      "eventPlace",
+      "eventDate",
+      "eventDescription",
+      "eventPrice",
+    ];
+
+    const isValidUpdates = updates.every((fields) =>
+      validUpdates.includes(fields),
+    );
+
+    if (!isValidUpdates) {
+      return next(new HttpError("only allowed field can be updated", 500));
+    }
+
+    if (req.files?.eventImages) {
+      eventToUpdate.eventImages.forEach((file) => {
+        if (fs.existsSync(file)) {
+          fs.unlinkSync(file);
+        }
+
+        eventToUpdate.eventImages =
+          req.files?.eventImages?.map((file) => file.path) || [];
+      });
+    }
+
+    updates.forEach((u) => {
+      eventToUpdate[u] = req.body[u];
+    });
+
+    await eventToUpdate.save();
+
+    res.status(200).json({
+      success: true,
+      message: "event data updated successfully",
+      eventToUpdate,
+    });
+  } catch (error) {
+    return next(new HttpError(error.message, 500));
+  }
+};
+
+export default { add, allEvents, eventById, deleteById, updateEvent };
