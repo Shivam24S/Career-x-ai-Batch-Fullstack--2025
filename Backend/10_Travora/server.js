@@ -5,10 +5,13 @@ import dotenv from "dotenv";
 import HttpError from "./middlewares/HttpError.js";
 
 import connectDB from "./config/db.js";
+import packageRouter from "./routes/packageRoutes.js";
 
 dotenv.config({ path: "./.env" });
 
 const app = express();
+
+app.use("/travel",packageRouter)
 
 app.use(express.json());
 

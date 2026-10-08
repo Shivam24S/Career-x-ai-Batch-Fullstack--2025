@@ -18,7 +18,6 @@ const packageSchema = new mongoose.Schema(
     },
     package_image: {
       type: String,
-      required: true,
     },
     duration: {
       type: String,
