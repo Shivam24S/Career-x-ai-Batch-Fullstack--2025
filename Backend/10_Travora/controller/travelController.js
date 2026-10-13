@@ -88,5 +88,52 @@ const DeletePackage = async (req, res, next) => {
     return next(new HttpError(error.message));
   }
 };
+const updatePackage = async (req, res, next) => {
+  try {
+    const { id } = req.params;
 
-export default { add, getAll, getById, DeletePackage };
+    const updatePackages = await Package.findById(id);
+
+    if (!updatePackage) {
+      return next(new HttpError("package not found", 404));
+    }
+
+    const updates = Object.keys(req.body);
+
+    const allowedField = [
+      "packageName",
+      "destination",
+      "description",
+      "duration",
+      "price",
+    ];
+
+    const isValid = updates.every((field) => allowedField.includes(field));
+
+    if (!isValid) {
+      return next(new HttpError("only allowed field can be updated", 400));
+    }
+
+    if (req.file) {
+      await cloudinary.uploader.destroy(updatePackages.cloudinary_id);
+
+      updatePackages.package_image = req.file.path;
+
+      updatePackages.cloudinary_id = req.file.filename;
+    }
+
+    updates.forEach((u) => {
+      updatePackages[u] = req.body[u];
+    });
+
+    await updatePackages.save();
+
+    res
+      .status(200)
+      .json({ success: "true", message: "package updated", updatePackages });
+  } catch (error) {
+    return next(new HttpError(error.message));
+  }
+};
+
+export default { add, getAll, getById, DeletePackage, updatePackage };
