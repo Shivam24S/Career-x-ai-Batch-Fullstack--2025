@@ -46,9 +46,11 @@ const login = async (req, res, next) => {
       return next(new HttpError("failed to login", 400));
     }
 
+    const token = await user.generateAuthToken();
+
     res
       .status(200)
-      .json({ success: true, message: "user login successfully", user });
+      .json({ success: true, message: "user login successfully", user, token });
   } catch (error) {
     next(new HttpError(error.message, 500));
   }

@@ -2,6 +2,8 @@ import mongoose from "mongoose";
 
 import bcrypt from "bcryptjs";
 
+import jwt from "jsonwebtoken";
+
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -24,6 +26,14 @@ const userSchema = new mongoose.Schema({
       }
     },
   },
+
+  tokens: [
+    {
+      token: {
+        type: String,
+      },
+    },
+  ],
 });
 
 userSchema.pre("save", async function () {
@@ -55,6 +65,26 @@ userSchema.statics.findByCredential = async function (email, password) {
     return user;
   } catch (error) {
     throw new Error("unable to login");
+  }
+};
+
+userSchema.methods.generateAuthToken = async function () {
+  try {
+    const user = this;
+
+    const token = jwt.sign(
+      { _id: user._id.toString() },
+      process.env.JWT_SECRET,
+      {
+        expiresIn: "7d",
+      },
+    );
+
+    user.tokens = user.tokens.concat({ token });
+
+    await user.save();
+  } catch (error) {
+    throw new Error(error);
   }
 };
 
