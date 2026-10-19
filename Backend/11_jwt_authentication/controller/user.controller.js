@@ -1,4 +1,4 @@
-import User from "../model/User.model.js";
+import User from "../model/user.model.js";
 import HttpError from "../middleware/HttpError.js";
 
 const add = async (req, res, next) => {

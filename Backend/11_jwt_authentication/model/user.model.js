@@ -83,11 +83,13 @@ userSchema.methods.generateAuthToken = async function () {
     user.tokens = user.tokens.concat({ token });
 
     await user.save();
+
+    return token;
   } catch (error) {
     throw new Error(error);
   }
 };
 
-const User = mongoose.model("user-auth", userSchema);
+const User = mongoose.models.userAuth || mongoose.model("userAuth", userSchema);
 
 export default User;
