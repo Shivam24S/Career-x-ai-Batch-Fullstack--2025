@@ -90,6 +90,26 @@ userSchema.methods.generateAuthToken = async function () {
   }
 };
 
+userSchema.methods.toJSON = function () {
+  try {
+    const user = this;
+
+    const userObject = user.toObject();
+
+    delete userObject.password;
+
+    delete userObject.tokens;
+
+    delete userObject.__v
+
+    console.log("userObject", userObject);
+
+    return userObject;
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
 const User = mongoose.models.userAuth || mongoose.model("userAuth", userSchema);
 
 export default User;
